@@ -1,0 +1,277 @@
+
+{
+    "code": 0,
+    "message": null,
+    "data": {
+        "gpsData": [
+            {
+                "V01": {
+                    "carNum": "102",
+                    "drivingTime": "16:12",
+                    "routeId": 3,
+                    "time": 0,
+                    "time3": 0,
+                    "time4": 540,
+                    "timeRouteId": 3
+                },
+                "V02": {
+                    "carNum": "",
+                    "drivingTime": "16:03",
+                    "routeId": 3,
+                    "time": -1,
+                    "time3": -1,
+                    "time4": -1,
+                    "timeRouteId": 3
+                },
+                "V03": {
+                    "carNum": "",
+                    "drivingTime": "16:05",
+                    "routeId": 3,
+                    "time": 91,
+                    "time3": 91,
+                    "time4": 91,
+                    "timeRouteId": 3
+                },
+                "V04": {
+                    "carNum": "",
+                    "drivingTime": "16:07",
+                    "routeId": 3,
+                    "time": 199,
+                    "time3": 199,
+                    "time4": 199,
+                    "timeRouteId": 3
+                },
+                "V05": {
+                    "carNum": "",
+                    "drivingTime": "16:09",
+                    "routeId": 3,
+                    "time": 274,
+                    "time3": 274,
+                    "time4": 274,
+                    "timeRouteId": 3
+                },
+                "V06": {
+                    "carNum": "",
+                    "drivingTime": "16:12",
+                    "routeId": 3,
+                    "time": 402,
+                    "time3": 402,
+                    "time4": 402,
+                    "timeRouteId": 3
+                },
+                "V07": {
+                    "carNum": "",
+                    "drivingTime": "16:04",
+                    "routeId": 3,
+                    "time": 60,
+                    "time3": 526,
+                    "time4": 60,
+                    "timeRouteId": 4
+                },
+                "V08": {
+                    "carNum": "",
+                    "drivingTime": "16:07",
+                    "routeId": 3,
+                    "time": 217,
+                    "time3": 683,
+                    "time4": 217,
+                    "timeRouteId": 4
+                },
+                "V09": {
+                    "carNum": "",
+                    "drivingTime": "16:09",
+                    "routeId": 3,
+                    "time": 318,
+                    "time3": 784,
+                    "time4": 318,
+                    "timeRouteId": 4
+                }
+            },
+            {
+                "V10": {
+                    "carNum": "",
+                    "drivingTime": "16:05",
+                    "routeId": 3,
+                    "time": 120,
+                    "time3": -1,
+                    "time4": -1,
+                    "timeRouteId": 3
+                },
+                "V11": {
+                    "carNum": "",
+                    "drivingTime": "-",
+                    "routeId": 3,
+                    "time": 261,
+                    "time3": -1,
+                    "time4": -1,
+                    "timeRouteId": 3
+                }
+            },
+            {
+                "V28": {
+                    "carNum": "",
+                    "drivingTime": "16:12",
+                    "routeId": 4,
+                    "time": 468,
+                    "time3": -1,
+                    "time4": -1,
+                    "timeRouteId": 4
+                },
+                "V27": {
+                    "carNum": "",
+                    "drivingTime": "16:15",
+                    "routeId": 4,
+                    "time": 623,
+                    "time3": -1,
+                    "time4": -1,
+                    "timeRouteId": 4
+                },
+                "V26": {
+                    "carNum": "",
+                    "drivingTime": "-",
+                    "routeId": 4,
+                    "time": 832,
+                    "time3": -1,
+                    "time4": -1,
+                    "timeRouteId": 4
+                }
+            },
+            {
+                "V11": {
+                    "carNum": "109",
+                    "drivingTime": "16:12",
+                    "routeId": 3,
+                    "time": 0,
+                    "time3": -1,
+                    "time4": -1,
+                    "timeRouteId": 3
+                },
+                "V10": {
+                    "carNum": "",
+                    "drivingTime": "16:15",
+                    "routeId": 3,
+                    "time": 650,
+                    "time3": -1,
+                    "time4": -1,
+                    "timeRouteId": 3
+                }
+            },
+            {
+                "V26": {
+                    "carNum": "108",
+                    "drivingTime": "16:15",
+                    "routeId": 4,
+                    "time": 0,
+                    "time3": -1,
+                    "time4": -1,
+                    "timeRouteId": 4
+                },
+                "V27": {
+                    "carNum": "",
+                    "drivingTime": "16:19",
+                    "routeId": 4,
+                    "time": 890,
+                    "time3": -1,
+                    "time4": -1,
+                    "timeRouteId": 4
+                },
+                "V28": {
+                    "carNum": "",
+                    "drivingTime": "16:04",
+                    "routeId": 4,
+                    "time": 60,
+                    "time3": -1,
+                    "time4": -1,
+                    "timeRouteId": 4
+                }
+            },
+            {
+                "V09": {
+                    "carNum": "",
+                    "drivingTime": "16:07",
+                    "routeId": null,
+                    "time": 161,
+                    "time3": 161,
+                    "time4": 161,
+                    "timeRouteId": 4
+                },
+                "V08": {
+                    "carNum": "",
+                    "drivingTime": "16:10",
+                    "routeId": null,
+                    "time": 262,
+                    "time3": 262,
+                    "time4": 262,
+                    "timeRouteId": 4
+                },
+                "V07": {
+                    "carNum": "",
+                    "drivingTime": "16:12",
+                    "routeId": null,
+                    "time": 372,
+                    "time3": 372,
+                    "time4": 372,
+                    "timeRouteId": 4
+                },
+                "V06": {
+                    "carNum": "",
+                    "drivingTime": "16:04",
+                    "routeId": null,
+                    "time": 60,
+                    "time3": 60,
+                    "time4": 495,
+                    "timeRouteId": 3
+                },
+                "V05": {
+                    "carNum": "",
+                    "drivingTime": "16:07",
+                    "routeId": null,
+                    "time": 190,
+                    "time3": 190,
+                    "time4": 625,
+                    "timeRouteId": 3
+                },
+                "V04": {
+                    "carNum": "",
+                    "drivingTime": "16:09",
+                    "routeId": null,
+                    "time": 267,
+                    "time3": 267,
+                    "time4": 702,
+                    "timeRouteId": 3
+                },
+                "V03": {
+                    "carNum": "",
+                    "drivingTime": "16:11",
+                    "routeId": null,
+                    "time": 383,
+                    "time3": 383,
+                    "time4": 818,
+                    "timeRouteId": 3
+                },
+                "V02": {
+                    "carNum": "",
+                    "drivingTime": "16:13",
+                    "routeId": null,
+                    "time": 477,
+                    "time3": 477,
+                    "time4": 912,
+                    "timeRouteId": 3
+                },
+                "V01": {
+                    "carNum": "",
+                    "drivingTime": "-",
+                    "routeId": null,
+                    "time": 627,
+                    "time3": -1,
+                    "time4": -1,
+                    "timeRouteId": 0
+                }
+            }
+        ],
+        "displaySettings": {
+            "startTimeUnit": 0,
+            "activeTimeUnit": 2
+        }
+    }
+}

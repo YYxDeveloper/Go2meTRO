@@ -1,0 +1,719 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D2976C802B57C351009F6149 /* NetworkPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2976C7F2B57C351009F6149 /* NetworkPart.swift */; };
+		D2976C812B57C351009F6149 /* NetworkPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2976C7F2B57C351009F6149 /* NetworkPart.swift */; };
+		D2976C822B57C351009F6149 /* NetworkPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2976C7F2B57C351009F6149 /* NetworkPart.swift */; };
+		D2B2B8AE2B565FC100BBE63F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2B8AD2B565FC100BBE63F /* AppDelegate.swift */; };
+		D2B2B8B02B565FC100BBE63F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2B8AF2B565FC100BBE63F /* SceneDelegate.swift */; };
+		D2B2B8B22B565FC100BBE63F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2B8B12B565FC100BBE63F /* ViewController.swift */; };
+		D2B2B8B52B565FC100BBE63F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2B2B8B32B565FC100BBE63F /* Main.storyboard */; };
+		D2B2B8B82B565FC100BBE63F /* Go2meTRO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2B2B8B62B565FC100BBE63F /* Go2meTRO.xcdatamodeld */; };
+		D2B2B8BA2B565FC200BBE63F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2B2B8B92B565FC200BBE63F /* Assets.xcassets */; };
+		D2B2B8BD2B565FC200BBE63F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2B2B8BB2B565FC200BBE63F /* LaunchScreen.storyboard */; };
+		D2B2B8C92B565FC200BBE63F /* Go2meTROTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2B8C82B565FC200BBE63F /* Go2meTROTests.swift */; };
+		D2B2B8D32B565FC200BBE63F /* Go2meTROUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2B8D22B565FC200BBE63F /* Go2meTROUITests.swift */; };
+		D2B2B8D52B565FC200BBE63F /* Go2meTROUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2B8D42B565FC200BBE63F /* Go2meTROUITestsLaunchTests.swift */; };
+		D2B2B8E32B5661EF00BBE63F /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = D2B2B8E22B5661EF00BBE63F /* SwiftSoup */; };
+		D2B2B8EA2B566B1400BBE63F /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D2B2B8E92B566B1400BBE63F /* RxAlamofire */; };
+		D2DDE0192B56805C00ECF8C8 /* V2Model.json in Resources */ = {isa = PBXBuildFile; fileRef = D2DDE0182B56805C00ECF8C8 /* V2Model.json */; };
+		D2DDE01A2B56805C00ECF8C8 /* V2Model.json in Resources */ = {isa = PBXBuildFile; fileRef = D2DDE0182B56805C00ECF8C8 /* V2Model.json */; };
+		D2DDE01B2B56805C00ECF8C8 /* V2Model.json in Resources */ = {isa = PBXBuildFile; fileRef = D2DDE0182B56805C00ECF8C8 /* V2Model.json */; };
+		D2DDE01D2B5680B800ECF8C8 /* V2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DDE01C2B5680B800ECF8C8 /* V2Model.swift */; };
+		D2DDE01E2B5680B800ECF8C8 /* V2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DDE01C2B5680B800ECF8C8 /* V2Model.swift */; };
+		D2DDE01F2B5680B800ECF8C8 /* V2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DDE01C2B5680B800ECF8C8 /* V2Model.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D2B2B8C52B565FC200BBE63F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2B2B8A22B565FC100BBE63F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2B2B8A92B565FC100BBE63F;
+			remoteInfo = Go2meTRO;
+		};
+		D2B2B8CF2B565FC200BBE63F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2B2B8A22B565FC100BBE63F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2B2B8A92B565FC100BBE63F;
+			remoteInfo = Go2meTRO;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D2976C7F2B57C351009F6149 /* NetworkPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPart.swift; sourceTree = "<group>"; };
+		D2B2B8AA2B565FC100BBE63F /* Go2meTRO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Go2meTRO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2B2B8AD2B565FC100BBE63F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D2B2B8AF2B565FC100BBE63F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D2B2B8B12B565FC100BBE63F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D2B2B8B42B565FC100BBE63F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D2B2B8B72B565FC100BBE63F /* Go2meTRO.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Go2meTRO.xcdatamodel; sourceTree = "<group>"; };
+		D2B2B8B92B565FC200BBE63F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D2B2B8BC2B565FC200BBE63F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D2B2B8BE2B565FC200BBE63F /* Go2meTRO.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Go2meTRO.entitlements; sourceTree = "<group>"; };
+		D2B2B8BF2B565FC200BBE63F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2B2B8C42B565FC200BBE63F /* Go2meTROTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Go2meTROTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2B2B8C82B565FC200BBE63F /* Go2meTROTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Go2meTROTests.swift; sourceTree = "<group>"; };
+		D2B2B8CE2B565FC200BBE63F /* Go2meTROUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Go2meTROUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2B2B8D22B565FC200BBE63F /* Go2meTROUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Go2meTROUITests.swift; sourceTree = "<group>"; };
+		D2B2B8D42B565FC200BBE63F /* Go2meTROUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Go2meTROUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D2DDE0182B56805C00ECF8C8 /* V2Model.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = V2Model.json; sourceTree = "<group>"; };
+		D2DDE01C2B5680B800ECF8C8 /* V2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2Model.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2B2B8A72B565FC100BBE63F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2B2B8E32B5661EF00BBE63F /* SwiftSoup in Frameworks */,
+				D2B2B8EA2B566B1400BBE63F /* RxAlamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2B2B8C12B565FC200BBE63F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2B2B8CB2B565FC200BBE63F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D2B2B8A12B565FC100BBE63F = {
+			isa = PBXGroup;
+			children = (
+				D2B2B8AC2B565FC100BBE63F /* Go2meTRO */,
+				D2B2B8C72B565FC200BBE63F /* Go2meTROTests */,
+				D2B2B8D12B565FC200BBE63F /* Go2meTROUITests */,
+				D2B2B8AB2B565FC100BBE63F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D2B2B8AB2B565FC100BBE63F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2B2B8AA2B565FC100BBE63F /* Go2meTRO.app */,
+				D2B2B8C42B565FC200BBE63F /* Go2meTROTests.xctest */,
+				D2B2B8CE2B565FC200BBE63F /* Go2meTROUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D2B2B8AC2B565FC100BBE63F /* Go2meTRO */ = {
+			isa = PBXGroup;
+			children = (
+				D2B2B8AD2B565FC100BBE63F /* AppDelegate.swift */,
+				D2B2B8AF2B565FC100BBE63F /* SceneDelegate.swift */,
+				D2B2B8B12B565FC100BBE63F /* ViewController.swift */,
+				D2976C7F2B57C351009F6149 /* NetworkPart.swift */,
+				D2DDE0182B56805C00ECF8C8 /* V2Model.json */,
+				D2DDE01C2B5680B800ECF8C8 /* V2Model.swift */,
+				D2B2B8B32B565FC100BBE63F /* Main.storyboard */,
+				D2B2B8B92B565FC200BBE63F /* Assets.xcassets */,
+				D2B2B8BB2B565FC200BBE63F /* LaunchScreen.storyboard */,
+				D2B2B8BE2B565FC200BBE63F /* Go2meTRO.entitlements */,
+				D2B2B8BF2B565FC200BBE63F /* Info.plist */,
+				D2B2B8B62B565FC100BBE63F /* Go2meTRO.xcdatamodeld */,
+			);
+			path = Go2meTRO;
+			sourceTree = "<group>";
+		};
+		D2B2B8C72B565FC200BBE63F /* Go2meTROTests */ = {
+			isa = PBXGroup;
+			children = (
+				D2B2B8C82B565FC200BBE63F /* Go2meTROTests.swift */,
+			);
+			path = Go2meTROTests;
+			sourceTree = "<group>";
+		};
+		D2B2B8D12B565FC200BBE63F /* Go2meTROUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D2B2B8D22B565FC200BBE63F /* Go2meTROUITests.swift */,
+				D2B2B8D42B565FC200BBE63F /* Go2meTROUITestsLaunchTests.swift */,
+			);
+			path = Go2meTROUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D2B2B8A92B565FC100BBE63F /* Go2meTRO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2B2B8D82B565FC200BBE63F /* Build configuration list for PBXNativeTarget "Go2meTRO" */;
+			buildPhases = (
+				D2B2B8A62B565FC100BBE63F /* Sources */,
+				D2B2B8A72B565FC100BBE63F /* Frameworks */,
+				D2B2B8A82B565FC100BBE63F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Go2meTRO;
+			packageProductDependencies = (
+				D2B2B8E22B5661EF00BBE63F /* SwiftSoup */,
+				D2B2B8E92B566B1400BBE63F /* RxAlamofire */,
+			);
+			productName = Go2meTRO;
+			productReference = D2B2B8AA2B565FC100BBE63F /* Go2meTRO.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D2B2B8C32B565FC200BBE63F /* Go2meTROTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2B2B8DB2B565FC200BBE63F /* Build configuration list for PBXNativeTarget "Go2meTROTests" */;
+			buildPhases = (
+				D2B2B8C02B565FC200BBE63F /* Sources */,
+				D2B2B8C12B565FC200BBE63F /* Frameworks */,
+				D2B2B8C22B565FC200BBE63F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2B2B8C62B565FC200BBE63F /* PBXTargetDependency */,
+			);
+			name = Go2meTROTests;
+			productName = Go2meTROTests;
+			productReference = D2B2B8C42B565FC200BBE63F /* Go2meTROTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D2B2B8CD2B565FC200BBE63F /* Go2meTROUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2B2B8DE2B565FC200BBE63F /* Build configuration list for PBXNativeTarget "Go2meTROUITests" */;
+			buildPhases = (
+				D2B2B8CA2B565FC200BBE63F /* Sources */,
+				D2B2B8CB2B565FC200BBE63F /* Frameworks */,
+				D2B2B8CC2B565FC200BBE63F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2B2B8D02B565FC200BBE63F /* PBXTargetDependency */,
+			);
+			name = Go2meTROUITests;
+			productName = Go2meTROUITests;
+			productReference = D2B2B8CE2B565FC200BBE63F /* Go2meTROUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D2B2B8A22B565FC100BBE63F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					D2B2B8A92B565FC100BBE63F = {
+						CreatedOnToolsVersion = 15.1;
+					};
+					D2B2B8C32B565FC200BBE63F = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = D2B2B8A92B565FC100BBE63F;
+					};
+					D2B2B8CD2B565FC200BBE63F = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = D2B2B8A92B565FC100BBE63F;
+					};
+				};
+			};
+			buildConfigurationList = D2B2B8A52B565FC100BBE63F /* Build configuration list for PBXProject "Go2meTRO" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D2B2B8A12B565FC100BBE63F;
+			packageReferences = (
+				D2B2B8E12B5661EF00BBE63F /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				D2B2B8E72B56666400BBE63F /* XCRemoteSwiftPackageReference "RxAnimated" */,
+				D2B2B8E82B566B1400BBE63F /* XCRemoteSwiftPackageReference "RxAlamofire" */,
+				D2976C832B57C78B009F6149 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
+			productRefGroup = D2B2B8AB2B565FC100BBE63F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2B2B8A92B565FC100BBE63F /* Go2meTRO */,
+				D2B2B8C32B565FC200BBE63F /* Go2meTROTests */,
+				D2B2B8CD2B565FC200BBE63F /* Go2meTROUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D2B2B8A82B565FC100BBE63F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2B2B8BD2B565FC200BBE63F /* LaunchScreen.storyboard in Resources */,
+				D2DDE0192B56805C00ECF8C8 /* V2Model.json in Resources */,
+				D2B2B8BA2B565FC200BBE63F /* Assets.xcassets in Resources */,
+				D2B2B8B52B565FC100BBE63F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2B2B8C22B565FC200BBE63F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2DDE01A2B56805C00ECF8C8 /* V2Model.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2B2B8CC2B565FC200BBE63F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2DDE01B2B56805C00ECF8C8 /* V2Model.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2B2B8A62B565FC100BBE63F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2B2B8B82B565FC100BBE63F /* Go2meTRO.xcdatamodeld in Sources */,
+				D2976C802B57C351009F6149 /* NetworkPart.swift in Sources */,
+				D2B2B8B22B565FC100BBE63F /* ViewController.swift in Sources */,
+				D2DDE01D2B5680B800ECF8C8 /* V2Model.swift in Sources */,
+				D2B2B8AE2B565FC100BBE63F /* AppDelegate.swift in Sources */,
+				D2B2B8B02B565FC100BBE63F /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2B2B8C02B565FC200BBE63F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2B2B8C92B565FC200BBE63F /* Go2meTROTests.swift in Sources */,
+				D2976C812B57C351009F6149 /* NetworkPart.swift in Sources */,
+				D2DDE01E2B5680B800ECF8C8 /* V2Model.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2B2B8CA2B565FC200BBE63F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2B2B8D52B565FC200BBE63F /* Go2meTROUITestsLaunchTests.swift in Sources */,
+				D2976C822B57C351009F6149 /* NetworkPart.swift in Sources */,
+				D2DDE01F2B5680B800ECF8C8 /* V2Model.swift in Sources */,
+				D2B2B8D32B565FC200BBE63F /* Go2meTROUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D2B2B8C62B565FC200BBE63F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2B2B8A92B565FC100BBE63F /* Go2meTRO */;
+			targetProxy = D2B2B8C52B565FC200BBE63F /* PBXContainerItemProxy */;
+		};
+		D2B2B8D02B565FC200BBE63F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2B2B8A92B565FC100BBE63F /* Go2meTRO */;
+			targetProxy = D2B2B8CF2B565FC200BBE63F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D2B2B8B32B565FC100BBE63F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2B2B8B42B565FC100BBE63F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D2B2B8BB2B565FC200BBE63F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2B2B8BC2B565FC200BBE63F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D2B2B8D62B565FC200BBE63F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D2B2B8D72B565FC200BBE63F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D2B2B8D92B565FC200BBE63F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Go2meTRO/Go2meTRO.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XPYYPG44HB;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Go2meTRO/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yyx.Go2meTRO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D2B2B8DA2B565FC200BBE63F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Go2meTRO/Go2meTRO.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XPYYPG44HB;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Go2meTRO/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yyx.Go2meTRO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D2B2B8DC2B565FC200BBE63F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XPYYPG44HB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yyx.Go2meTRO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Go2meTRO.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Go2meTRO";
+			};
+			name = Debug;
+		};
+		D2B2B8DD2B565FC200BBE63F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XPYYPG44HB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yyx.Go2meTRO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Go2meTRO.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Go2meTRO";
+			};
+			name = Release;
+		};
+		D2B2B8DF2B565FC200BBE63F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XPYYPG44HB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yyx.Go2meTRO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Go2meTRO;
+			};
+			name = Debug;
+		};
+		D2B2B8E02B565FC200BBE63F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XPYYPG44HB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yyx.Go2meTRO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Go2meTRO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D2B2B8A52B565FC100BBE63F /* Build configuration list for PBXProject "Go2meTRO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2B2B8D62B565FC200BBE63F /* Debug */,
+				D2B2B8D72B565FC200BBE63F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2B2B8D82B565FC200BBE63F /* Build configuration list for PBXNativeTarget "Go2meTRO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2B2B8D92B565FC200BBE63F /* Debug */,
+				D2B2B8DA2B565FC200BBE63F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2B2B8DB2B565FC200BBE63F /* Build configuration list for PBXNativeTarget "Go2meTROTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2B2B8DC2B565FC200BBE63F /* Debug */,
+				D2B2B8DD2B565FC200BBE63F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2B2B8DE2B565FC200BBE63F /* Build configuration list for PBXNativeTarget "Go2meTROUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2B2B8DF2B565FC200BBE63F /* Debug */,
+				D2B2B8E02B565FC200BBE63F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D2976C832B57C78B009F6149 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
+		D2B2B8E12B5661EF00BBE63F /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.0;
+			};
+		};
+		D2B2B8E72B56666400BBE63F /* XCRemoteSwiftPackageReference "RxAnimated" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxAnimated";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+		D2B2B8E82B566B1400BBE63F /* XCRemoteSwiftPackageReference "RxAlamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxAlamofire";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 6.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D2B2B8E22B5661EF00BBE63F /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2B2B8E12B5661EF00BBE63F /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+		D2B2B8E92B566B1400BBE63F /* RxAlamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2B2B8E82B566B1400BBE63F /* XCRemoteSwiftPackageReference "RxAlamofire" */;
+			productName = RxAlamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		D2B2B8B62B565FC100BBE63F /* Go2meTRO.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D2B2B8B72B565FC100BBE63F /* Go2meTRO.xcdatamodel */,
+			);
+			currentVersion = D2B2B8B72B565FC100BBE63F /* Go2meTRO.xcdatamodel */;
+			path = Go2meTRO.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D2B2B8A22B565FC100BBE63F /* Project object */;
+}
