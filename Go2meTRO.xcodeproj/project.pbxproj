@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		067E18677FF6E5D9C89EC508 /* Pods_Go2meTRO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A046C37E55A1C08C63E31299 /* Pods_Go2meTRO.framework */; };
+		06B5C2DB5AC0315823A57459 /* Pods_Go2meTRO_Go2meTROUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 147E58B801838C19A806BD7C /* Pods_Go2meTRO_Go2meTROUITests.framework */; };
+		7C4A735AA36BE777CFAF3D0A /* Pods_Go2meTROTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EDFF5513344D131BDB59422 /* Pods_Go2meTROTests.framework */; };
 		D2976C802B57C351009F6149 /* NetworkPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2976C7F2B57C351009F6149 /* NetworkPart.swift */; };
 		D2976C812B57C351009F6149 /* NetworkPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2976C7F2B57C351009F6149 /* NetworkPart.swift */; };
 		D2976C822B57C351009F6149 /* NetworkPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2976C7F2B57C351009F6149 /* NetworkPart.swift */; };
@@ -20,8 +23,6 @@
 		D2B2B8C92B565FC200BBE63F /* Go2meTROTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2B8C82B565FC200BBE63F /* Go2meTROTests.swift */; };
 		D2B2B8D32B565FC200BBE63F /* Go2meTROUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2B8D22B565FC200BBE63F /* Go2meTROUITests.swift */; };
 		D2B2B8D52B565FC200BBE63F /* Go2meTROUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2B8D42B565FC200BBE63F /* Go2meTROUITestsLaunchTests.swift */; };
-		D2B2B8E32B5661EF00BBE63F /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = D2B2B8E22B5661EF00BBE63F /* SwiftSoup */; };
-		D2B2B8EA2B566B1400BBE63F /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D2B2B8E92B566B1400BBE63F /* RxAlamofire */; };
 		D2DDE0192B56805C00ECF8C8 /* V2Model.json in Resources */ = {isa = PBXBuildFile; fileRef = D2DDE0182B56805C00ECF8C8 /* V2Model.json */; };
 		D2DDE01A2B56805C00ECF8C8 /* V2Model.json in Resources */ = {isa = PBXBuildFile; fileRef = D2DDE0182B56805C00ECF8C8 /* V2Model.json */; };
 		D2DDE01B2B56805C00ECF8C8 /* V2Model.json in Resources */ = {isa = PBXBuildFile; fileRef = D2DDE0182B56805C00ECF8C8 /* V2Model.json */; };
@@ -48,6 +49,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F4F6CEF2556F3CD6CC50B8F /* Pods-Go2meTRO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go2meTRO.debug.xcconfig"; path = "Target Support Files/Pods-Go2meTRO/Pods-Go2meTRO.debug.xcconfig"; sourceTree = "<group>"; };
+		147E58B801838C19A806BD7C /* Pods_Go2meTRO_Go2meTROUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Go2meTRO_Go2meTROUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17815F28EF0A3D257A9C6AA1 /* Pods-Go2meTRO-Go2meTROUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go2meTRO-Go2meTROUITests.debug.xcconfig"; path = "Target Support Files/Pods-Go2meTRO-Go2meTROUITests/Pods-Go2meTRO-Go2meTROUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		535107D914985B1312BFD71A /* Pods-Go2meTROTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go2meTROTests.release.xcconfig"; path = "Target Support Files/Pods-Go2meTROTests/Pods-Go2meTROTests.release.xcconfig"; sourceTree = "<group>"; };
+		7EDFF5513344D131BDB59422 /* Pods_Go2meTROTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Go2meTROTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92F95C4180C8F12E0CABEB28 /* Pods-Go2meTRO-Go2meTROUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go2meTRO-Go2meTROUITests.release.xcconfig"; path = "Target Support Files/Pods-Go2meTRO-Go2meTROUITests/Pods-Go2meTRO-Go2meTROUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A046C37E55A1C08C63E31299 /* Pods_Go2meTRO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Go2meTRO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2976C7F2B57C351009F6149 /* NetworkPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPart.swift; sourceTree = "<group>"; };
 		D2B2B8AA2B565FC100BBE63F /* Go2meTRO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Go2meTRO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B2B8AD2B565FC100BBE63F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +74,8 @@
 		D2B2B8D42B565FC200BBE63F /* Go2meTROUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Go2meTROUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D2DDE0182B56805C00ECF8C8 /* V2Model.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = V2Model.json; sourceTree = "<group>"; };
 		D2DDE01C2B5680B800ECF8C8 /* V2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2Model.swift; sourceTree = "<group>"; };
+		E0BE9F8177D0196A30D031BC /* Pods-Go2meTROTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go2meTROTests.debug.xcconfig"; path = "Target Support Files/Pods-Go2meTROTests/Pods-Go2meTROTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EB5EFD69B91701E309F45B98 /* Pods-Go2meTRO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go2meTRO.release.xcconfig"; path = "Target Support Files/Pods-Go2meTRO/Pods-Go2meTRO.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2B2B8E32B5661EF00BBE63F /* SwiftSoup in Frameworks */,
-				D2B2B8EA2B566B1400BBE63F /* RxAlamofire in Frameworks */,
+				067E18677FF6E5D9C89EC508 /* Pods_Go2meTRO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C4A735AA36BE777CFAF3D0A /* Pods_Go2meTROTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,12 +99,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06B5C2DB5AC0315823A57459 /* Pods_Go2meTRO_Go2meTROUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31ECEEEEB1E3D964BA93BEB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A046C37E55A1C08C63E31299 /* Pods_Go2meTRO.framework */,
+				147E58B801838C19A806BD7C /* Pods_Go2meTRO_Go2meTROUITests.framework */,
+				7EDFF5513344D131BDB59422 /* Pods_Go2meTROTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		592E7FEC51024B8D4CEE99AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F4F6CEF2556F3CD6CC50B8F /* Pods-Go2meTRO.debug.xcconfig */,
+				EB5EFD69B91701E309F45B98 /* Pods-Go2meTRO.release.xcconfig */,
+				17815F28EF0A3D257A9C6AA1 /* Pods-Go2meTRO-Go2meTROUITests.debug.xcconfig */,
+				92F95C4180C8F12E0CABEB28 /* Pods-Go2meTRO-Go2meTROUITests.release.xcconfig */,
+				E0BE9F8177D0196A30D031BC /* Pods-Go2meTROTests.debug.xcconfig */,
+				535107D914985B1312BFD71A /* Pods-Go2meTROTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D2B2B8A12B565FC100BBE63F = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +136,8 @@
 				D2B2B8C72B565FC200BBE63F /* Go2meTROTests */,
 				D2B2B8D12B565FC200BBE63F /* Go2meTROUITests */,
 				D2B2B8AB2B565FC100BBE63F /* Products */,
+				592E7FEC51024B8D4CEE99AA /* Pods */,
+				31ECEEEEB1E3D964BA93BEB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,9 +194,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2B2B8D82B565FC200BBE63F /* Build configuration list for PBXNativeTarget "Go2meTRO" */;
 			buildPhases = (
+				4DC2B494487E845A3FD15FF6 /* [CP] Check Pods Manifest.lock */,
 				D2B2B8A62B565FC100BBE63F /* Sources */,
 				D2B2B8A72B565FC100BBE63F /* Frameworks */,
 				D2B2B8A82B565FC100BBE63F /* Resources */,
+				E153F7AC522FFA0E48FD6010 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -168,8 +206,6 @@
 			);
 			name = Go2meTRO;
 			packageProductDependencies = (
-				D2B2B8E22B5661EF00BBE63F /* SwiftSoup */,
-				D2B2B8E92B566B1400BBE63F /* RxAlamofire */,
 			);
 			productName = Go2meTRO;
 			productReference = D2B2B8AA2B565FC100BBE63F /* Go2meTRO.app */;
@@ -179,9 +215,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2B2B8DB2B565FC200BBE63F /* Build configuration list for PBXNativeTarget "Go2meTROTests" */;
 			buildPhases = (
+				468AF0581BEB6B4A554F768B /* [CP] Check Pods Manifest.lock */,
 				D2B2B8C02B565FC200BBE63F /* Sources */,
 				D2B2B8C12B565FC200BBE63F /* Frameworks */,
 				D2B2B8C22B565FC200BBE63F /* Resources */,
+				005847427F6DFD144E9B8860 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -197,9 +235,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2B2B8DE2B565FC200BBE63F /* Build configuration list for PBXNativeTarget "Go2meTROUITests" */;
 			buildPhases = (
+				863531AE33D8128E4824AD1A /* [CP] Check Pods Manifest.lock */,
 				D2B2B8CA2B565FC200BBE63F /* Sources */,
 				D2B2B8CB2B565FC200BBE63F /* Frameworks */,
 				D2B2B8CC2B565FC200BBE63F /* Resources */,
+				ECAA6FC6D53E70E820CC4717 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -244,10 +284,6 @@
 			);
 			mainGroup = D2B2B8A12B565FC100BBE63F;
 			packageReferences = (
-				D2B2B8E12B5661EF00BBE63F /* XCRemoteSwiftPackageReference "SwiftSoup" */,
-				D2B2B8E72B56666400BBE63F /* XCRemoteSwiftPackageReference "RxAnimated" */,
-				D2B2B8E82B566B1400BBE63F /* XCRemoteSwiftPackageReference "RxAlamofire" */,
-				D2976C832B57C78B009F6149 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = D2B2B8AB2B565FC100BBE63F /* Products */;
 			projectDirPath = "";
@@ -289,6 +325,126 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		005847427F6DFD144E9B8860 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Go2meTROTests/Pods-Go2meTROTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Go2meTROTests/Pods-Go2meTROTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Go2meTROTests/Pods-Go2meTROTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		468AF0581BEB6B4A554F768B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Go2meTROTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4DC2B494487E845A3FD15FF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Go2meTRO-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		863531AE33D8128E4824AD1A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Go2meTRO-Go2meTROUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E153F7AC522FFA0E48FD6010 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Go2meTRO/Pods-Go2meTRO-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Go2meTRO/Pods-Go2meTRO-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Go2meTRO/Pods-Go2meTRO-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECAA6FC6D53E70E820CC4717 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Go2meTRO-Go2meTROUITests/Pods-Go2meTRO-Go2meTROUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Go2meTRO-Go2meTROUITests/Pods-Go2meTRO-Go2meTROUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Go2meTRO-Go2meTROUITests/Pods-Go2meTRO-Go2meTROUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2B2B8A62B565FC100BBE63F /* Sources */ = {
@@ -481,6 +637,7 @@
 		};
 		D2B2B8D92B565FC200BBE63F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F4F6CEF2556F3CD6CC50B8F /* Pods-Go2meTRO.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -488,6 +645,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XPYYPG44HB;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Go2meTRO/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -495,6 +653,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -510,6 +669,7 @@
 		};
 		D2B2B8DA2B565FC200BBE63F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB5EFD69B91701E309F45B98 /* Pods-Go2meTRO.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -517,6 +677,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XPYYPG44HB;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Go2meTRO/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -524,6 +685,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -539,14 +701,16 @@
 		};
 		D2B2B8DC2B565FC200BBE63F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0BE9F8177D0196A30D031BC /* Pods-Go2meTROTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XPYYPG44HB;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yyx.Go2meTRO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -559,14 +723,16 @@
 		};
 		D2B2B8DD2B565FC200BBE63F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 535107D914985B1312BFD71A /* Pods-Go2meTROTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XPYYPG44HB;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yyx.Go2meTRO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -579,12 +745,15 @@
 		};
 		D2B2B8DF2B565FC200BBE63F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17815F28EF0A3D257A9C6AA1 /* Pods-Go2meTRO-Go2meTROUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XPYYPG44HB;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yyx.Go2meTRO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -597,12 +766,15 @@
 		};
 		D2B2B8E02B565FC200BBE63F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92F95C4180C8F12E0CABEB28 /* Pods-Go2meTRO-Go2meTROUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XPYYPG44HB;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yyx.Go2meTRO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -653,54 +825,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		D2976C832B57C78B009F6149 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.6.0;
-			};
-		};
-		D2B2B8E12B5661EF00BBE63F /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.7.0;
-			};
-		};
-		D2B2B8E72B56666400BBE63F /* XCRemoteSwiftPackageReference "RxAnimated" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxAnimated";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.0;
-			};
-		};
-		D2B2B8E82B566B1400BBE63F /* XCRemoteSwiftPackageReference "RxAlamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxAlamofire";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 6.1.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		D2B2B8E22B5661EF00BBE63F /* SwiftSoup */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D2B2B8E12B5661EF00BBE63F /* XCRemoteSwiftPackageReference "SwiftSoup" */;
-			productName = SwiftSoup;
-		};
-		D2B2B8E92B566B1400BBE63F /* RxAlamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D2B2B8E82B566B1400BBE63F /* XCRemoteSwiftPackageReference "RxAlamofire" */;
-			productName = RxAlamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D2B2B8B62B565FC100BBE63F /* Go2meTRO.xcdatamodeld */ = {
