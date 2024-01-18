@@ -34,7 +34,7 @@ class NetworManager{
                     }
                 }, onError: { error in
                     single(.failure(error))
-//                    assertionFailure(error.localizedDescription)
+                    assertionFailure(error.localizedDescription)
                 })
         }
     }

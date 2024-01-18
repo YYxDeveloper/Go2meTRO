@@ -20,10 +20,6 @@ class MainViewController: UIViewController {
             
             
             
-            },
-            onFailure: { error in
-                print(error.localizedDescription)
-                
             }
         ).disposed(by: disposeBag)
     }

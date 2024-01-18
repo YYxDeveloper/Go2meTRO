@@ -26,6 +26,7 @@
 		D2B2B8C92B565FC200BBE63F /* Go2meTROTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2B8C82B565FC200BBE63F /* Go2meTROTests.swift */; };
 		D2B2B8D32B565FC200BBE63F /* Go2meTROUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2B8D22B565FC200BBE63F /* Go2meTROUITests.swift */; };
 		D2B2B8D52B565FC200BBE63F /* Go2meTROUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2B8D42B565FC200BBE63F /* Go2meTROUITestsLaunchTests.swift */; };
+		D2C2B0A72B591A7500AAE90A /* V2DefaultModel.json in Resources */ = {isa = PBXBuildFile; fileRef = D2C2B0A62B591A7500AAE90A /* V2DefaultModel.json */; };
 		D2DDE0192B56805C00ECF8C8 /* V2Model.json in Resources */ = {isa = PBXBuildFile; fileRef = D2DDE0182B56805C00ECF8C8 /* V2Model.json */; };
 		D2DDE01A2B56805C00ECF8C8 /* V2Model.json in Resources */ = {isa = PBXBuildFile; fileRef = D2DDE0182B56805C00ECF8C8 /* V2Model.json */; };
 		D2DDE01B2B56805C00ECF8C8 /* V2Model.json in Resources */ = {isa = PBXBuildFile; fileRef = D2DDE0182B56805C00ECF8C8 /* V2Model.json */; };
@@ -76,6 +77,7 @@
 		D2B2B8CE2B565FC200BBE63F /* Go2meTROUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Go2meTROUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B2B8D22B565FC200BBE63F /* Go2meTROUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Go2meTROUITests.swift; sourceTree = "<group>"; };
 		D2B2B8D42B565FC200BBE63F /* Go2meTROUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Go2meTROUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D2C2B0A62B591A7500AAE90A /* V2DefaultModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = V2DefaultModel.json; sourceTree = "<group>"; };
 		D2DDE0182B56805C00ECF8C8 /* V2Model.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = V2Model.json; sourceTree = "<group>"; };
 		D2DDE01C2B5680B800ECF8C8 /* V2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2Model.swift; sourceTree = "<group>"; };
 		E0BE9F8177D0196A30D031BC /* Pods-Go2meTROTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go2meTROTests.debug.xcconfig"; path = "Target Support Files/Pods-Go2meTROTests/Pods-Go2meTROTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				D2976C7F2B57C351009F6149 /* NetworkPart.swift */,
 				D28C7CD32B58F5B100FB9EB7 /* MainViewController.swift */,
 				D2DDE0182B56805C00ECF8C8 /* V2Model.json */,
+				D2C2B0A62B591A7500AAE90A /* V2DefaultModel.json */,
 				D2DDE01C2B5680B800ECF8C8 /* V2Model.swift */,
 				D2B2B8B32B565FC100BBE63F /* Main.storyboard */,
 				D2B2B8B92B565FC200BBE63F /* Assets.xcassets */,
@@ -308,6 +311,7 @@
 			files = (
 				D2B2B8BD2B565FC200BBE63F /* LaunchScreen.storyboard in Resources */,
 				D2DDE0192B56805C00ECF8C8 /* V2Model.json in Resources */,
+				D2C2B0A72B591A7500AAE90A /* V2DefaultModel.json in Resources */,
 				D2B2B8BA2B565FC200BBE63F /* Assets.xcassets in Resources */,
 				D2B2B8B52B565FC100BBE63F /* Main.storyboard in Resources */,
 			);
