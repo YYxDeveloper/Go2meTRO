@@ -10,8 +10,9 @@ import RxAlamofire
 import RxSwift
 class NetworManager{
     enum urls:String {
-        case lightRailV = "https://trainsmonitor.ntmetro.com.tw/public/api/getCurrentTimetableV2/V"
-        case lightRailK = "https://trainsmonitor.ntmetro.com.tw/public/api/getCurrentTimetableV2/K"
+        case ntmetroHome = "https://trainsmonitor.ntmetro.com.tw/"
+        case ntmetroV = "https://trainsmonitor.ntmetro.com.tw/public/api/getCurrentTimetableV2/V"
+        case ntmetroK = "https://trainsmonitor.ntmetro.com.tw/public/api/getCurrentTimetableV2/K"
     }    
     func updateRailV() -> Observable<V2CurrentTimeModel>{
         return Observable.create { observer in
