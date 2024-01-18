@@ -6,15 +6,27 @@
 //
 
 import UIKit
-
+import RxSwift
 class MainViewController: UIViewController {
-
+    let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        NetworManager.shared.callNTmetroV().subscribe(
+            onSuccess:{ model in
+            
+            
+            
+            
+            
+            },
+            onFailure: { error in
+                print(error.localizedDescription)
+                
+            }
+        ).disposed(by: disposeBag)
     }
-    
 
     /*
     // MARK: - Navigation
