@@ -56,7 +56,7 @@ final class Go2meTROTests: XCTestCase {
         }
 
     }
-    func testRx() {
+    func testUpdateRailV() {
         let networManager = NetworManager()
         let obseverable = networManager.updateRailV()
         obseverable.debug().subscribe(onNext: { model in
@@ -64,5 +64,6 @@ final class Go2meTROTests: XCTestCase {
             
         }).disposed(by: disposeBag)
     }
+   
 
 }
