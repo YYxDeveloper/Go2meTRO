@@ -45,7 +45,7 @@ final class Go2meTROTests: XCTestCase {
                 let decoder = JSONDecoder()
                 
                 let model = try decoder.decode(V2CurrentTimeModel.self, from: jsonData)
-                assert(model.data.gpsData.count > 0)
+                assert(model.data!.gpsData.count > 0)
             } catch {
                 print("Error reading file: \(error.localizedDescription)")
                 assertionFailure()
@@ -55,20 +55,9 @@ final class Go2meTROTests: XCTestCase {
         }
 
     }
-    func testCallNTmetroV() {
-        let networManager = NetworManager()
-        let obseverable = NetworManager.shared.callNTmetroV()
-        obseverable.debug().subscribe(
-                onSuccess: { model in
-                    assert(model.code == 0)
-            
-            },
-                onFailure:{error in
-                    assertionFailure()
-                
-            }
-        ).disposed(by: disposeBag)
+    func testV2CurrentTimeModel() {
+        let model = V2CurrentTimeModel.createDefaultModel()
+        assert(model.message == "api error")
     }
-   
 
 }

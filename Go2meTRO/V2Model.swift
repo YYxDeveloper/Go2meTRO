@@ -9,7 +9,7 @@ import Foundation
 struct V2CurrentTimeModel: Decodable {
     let code: Int
     let message: String?
-    let data: DataContainer
+    let data: DataContainer?
 }
 
 struct DataContainer: Decodable {

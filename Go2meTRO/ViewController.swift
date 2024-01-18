@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         
         
         btn.rx.tap.subscribe({[unowned self] _ in
-          
+            
         }).disposed(by: disposeBag)
         webView.load(URLRequest(url: URL(string: NetworManager.urls.ntmetroHome.rawValue)!))
         webView.rx.didFinishLoad.subscribe(

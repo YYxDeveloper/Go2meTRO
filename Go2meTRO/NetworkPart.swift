@@ -10,32 +10,43 @@ import RxAlamofire
 import RxSwift
 class NetworManager{
     static let shared = NetworManager()
-    let updateInterVal:TimeInterval = 30
+    private let disposeBag = DisposeBag()
+    let updateInterVal:TimeInterval = 8
+    let v2CurrentTimeSubject = PublishSubject<V2CurrentTimeModel>()
     enum urls:String {
         //未來要從後端取
         case ntmetroHome,apiFailInstead = "https://trainsmonitor.ntmetro.com.tw/"
         case ntmetroV = "https://trainsmonitor.ntmetro.com.tw/public/api/getCurrentTimetableV2/V"
         case ntmetroK = "https://trainsmonitor.ntmetro.com.tw/public/api/getCurrentTimetableV2/K"
-    }    
-    func callNTmetroV() -> Single<V2CurrentTimeModel>{
-        return Single.create { single in
+    }
+    
+    func callNTmetroV() {
+       
             
-            requestJSON(.post, "https://trainsmoniaator.ntmetro.com.tw/public/api/getCurrentTimetableV2/V")
-                .debug()
-                .subscribe(onNext: {(_,dic) in
+                requestJSON(.post, NetworManager.urls.ntmetroV.rawValue)
+               
+                .subscribe(onNext: { [unowned self](_,dic) in
                     do {
                      
                         let content = try JSONSerialization.data(withJSONObject: dic, options: [])
                         
                         let model = try JSONDecoder().decode(V2CurrentTimeModel.self, from: content)
-                        single(.success(model))
+                        self.v2CurrentTimeSubject.onNext(model)
                     } catch {
-                        single(.failure(error))
                     }
                 }, onError: { error in
-                    single(.failure(error))
+                    self.v2CurrentTimeSubject.onError(error)
                     assertionFailure(error.localizedDescription)
-                })
+                }).disposed(by: disposeBag)
+
+    }
+
+    func startUpdateTimeTable() {
+        let timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
+            self.callNTmetroV()
         }
+           
+           
+            
     }
 }

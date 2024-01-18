@@ -11,17 +11,8 @@ class MainViewController: UIViewController {
     let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
+        NetworManager.shared.startUpdateTimeTable()
 
-        // Do any additional setup after loading the view.
-        NetworManager.shared.callNTmetroV().subscribe(
-            onSuccess:{ model in
-            
-            
-            
-            
-            
-            }
-        ).disposed(by: disposeBag)
     }
 
     /*
