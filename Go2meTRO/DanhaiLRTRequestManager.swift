@@ -10,13 +10,39 @@ import RxAlamofire
 import RxSwift
 
 class DanhaiLRTRequestManager{
-    class RouteManager{
-        let currentTimeSubject = PublishSubject<V2CurrentTimeModel>()
-        let errorSubject = PublishSubject<Error>()
+    enum routeError:Error {
+        case mappingError
+    }
+    let errorSubject = PublishSubject<Error>()
 
-        func handelModel(model:V2CurrentTimeModel) {
-            let toKanding = [GpsData]()
-            let toWahrf = [GpsData]()
+    class RouteManager{
+       
+        enum witchLRTLine: Int {
+            case upToHongshulin, upToKanding, upToWahrf
+            case downToToKanding, downToWahrf, downToHongshulin
+        }
+        let currentTimeSubject = PublishSubject<V2CurrentTimeModel>()
+        var upToKanding = [String :GpsData]()
+        var downToToKanding = [String :GpsData]()
+        var upToWahrf = [String :GpsData]()
+        var downToWahrf = [String :GpsData]()
+        var upToHongshulin = [String :GpsData]()
+        var downToHongshulin = [String :GpsData]()
+        
+        func handelModel(model:V2CurrentTimeModel) throws {
+            if let data = model.data {
+                upToHongshulin = data.gpsData[witchLRTLine.upToHongshulin.rawValue]
+                upToKanding = data.gpsData[witchLRTLine.upToKanding.rawValue]
+                upToWahrf = data.gpsData[witchLRTLine.upToWahrf.rawValue]
+                downToToKanding = data.gpsData[witchLRTLine.downToToKanding.rawValue]
+                downToWahrf = data.gpsData[witchLRTLine.downToWahrf.rawValue]
+                downToHongshulin = data.gpsData[witchLRTLine.downToHongshulin.rawValue]
+                
+
+            }else{
+                throw routeError.mappingError
+            }
+
         }
     }
     static let shared = DanhaiLRTRequestManager()
@@ -46,17 +72,22 @@ class DanhaiLRTRequestManager{
                     } catch {
                     }
                 }, onError: { [unowned self] error in
-                    self.routeManager.errorSubject.onNext(error)
+                    self.errorSubject.onNext(error)
                     assertionFailure(error.localizedDescription)
                 }).disposed(by: self.disposeBag)
             
         }
         routeManager.currentTimeSubject.subscribe(onNext: {[unowned self] model in
             
-            self.routeManager.handelModel(model: model)
+            do {
+                try  self.routeManager.handelModel(model: model)
+            } catch  {
+                self.errorSubject.onNext(error)
+            }
+           
             
         }, onError: { [unowned self] error in
-            routeManager.errorSubject.onNext(error)
+            self.errorSubject.onNext(error)
         }).disposed(by: self.disposeBag)
 
     }
