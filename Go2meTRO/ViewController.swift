@@ -12,7 +12,7 @@ import WebKit
 import RxCocoa
 class ViewController: UIViewController {
     let disposeBag = DisposeBag()
-    let aa = NetworManager()
+    let aa = DanhaiLRTRequestManager()
     lazy var webView = WKWebView(frame: self.view.bounds)
 
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         btn.rx.tap.subscribe({[unowned self] _ in
             
         }).disposed(by: disposeBag)
-        webView.load(URLRequest(url: URL(string: NetworManager.urls.ntmetroHome.rawValue)!))
+        webView.load(URLRequest(url: URL(string: DanhaiLRTRequestManager.urls.ntmetroHome.rawValue)!))
         webView.rx.didFinishLoad.subscribe(
             onNext: {[unowned self] _ in
                 webView.evaluateJavaScript("""
