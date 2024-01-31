@@ -13,9 +13,9 @@
 		D28C7CD42B58F5B100FB9EB7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28C7CD32B58F5B100FB9EB7 /* MainViewController.swift */; };
 		D28C7CD52B58F5B100FB9EB7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28C7CD32B58F5B100FB9EB7 /* MainViewController.swift */; };
 		D28C7CD62B58F5B100FB9EB7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28C7CD32B58F5B100FB9EB7 /* MainViewController.swift */; };
-		D2976C802B57C351009F6149 /* NetworkPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2976C7F2B57C351009F6149 /* NetworkPart.swift */; };
-		D2976C812B57C351009F6149 /* NetworkPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2976C7F2B57C351009F6149 /* NetworkPart.swift */; };
-		D2976C822B57C351009F6149 /* NetworkPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2976C7F2B57C351009F6149 /* NetworkPart.swift */; };
+		D2976C802B57C351009F6149 /* DanhaiLRTRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2976C7F2B57C351009F6149 /* DanhaiLRTRequestManager.swift */; };
+		D2976C812B57C351009F6149 /* DanhaiLRTRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2976C7F2B57C351009F6149 /* DanhaiLRTRequestManager.swift */; };
+		D2976C822B57C351009F6149 /* DanhaiLRTRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2976C7F2B57C351009F6149 /* DanhaiLRTRequestManager.swift */; };
 		D2B2B8AE2B565FC100BBE63F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2B8AD2B565FC100BBE63F /* AppDelegate.swift */; };
 		D2B2B8B02B565FC100BBE63F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2B8AF2B565FC100BBE63F /* SceneDelegate.swift */; };
 		D2B2B8B22B565FC100BBE63F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2B8B12B565FC100BBE63F /* ViewController.swift */; };
@@ -61,7 +61,7 @@
 		92F95C4180C8F12E0CABEB28 /* Pods-Go2meTRO-Go2meTROUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go2meTRO-Go2meTROUITests.release.xcconfig"; path = "Target Support Files/Pods-Go2meTRO-Go2meTROUITests/Pods-Go2meTRO-Go2meTROUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A046C37E55A1C08C63E31299 /* Pods_Go2meTRO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Go2meTRO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28C7CD32B58F5B100FB9EB7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		D2976C7F2B57C351009F6149 /* NetworkPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPart.swift; sourceTree = "<group>"; };
+		D2976C7F2B57C351009F6149 /* DanhaiLRTRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanhaiLRTRequestManager.swift; sourceTree = "<group>"; };
 		D2B2B8AA2B565FC100BBE63F /* Go2meTRO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Go2meTRO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B2B8AD2B565FC100BBE63F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2B2B8AF2B565FC100BBE63F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 				D2B2B8AD2B565FC100BBE63F /* AppDelegate.swift */,
 				D2B2B8AF2B565FC100BBE63F /* SceneDelegate.swift */,
 				D2B2B8B12B565FC100BBE63F /* ViewController.swift */,
-				D2976C7F2B57C351009F6149 /* NetworkPart.swift */,
+				D2976C7F2B57C351009F6149 /* DanhaiLRTRequestManager.swift */,
 				D28C7CD32B58F5B100FB9EB7 /* MainViewController.swift */,
 				D2DDE0182B56805C00ECF8C8 /* V2Model.json */,
 				D2C2B0A62B591A7500AAE90A /* V2DefaultModel.json */,
@@ -462,7 +462,7 @@
 			files = (
 				D28C7CD42B58F5B100FB9EB7 /* MainViewController.swift in Sources */,
 				D2B2B8B82B565FC100BBE63F /* Go2meTRO.xcdatamodeld in Sources */,
-				D2976C802B57C351009F6149 /* NetworkPart.swift in Sources */,
+				D2976C802B57C351009F6149 /* DanhaiLRTRequestManager.swift in Sources */,
 				D2B2B8B22B565FC100BBE63F /* ViewController.swift in Sources */,
 				D2DDE01D2B5680B800ECF8C8 /* V2Model.swift in Sources */,
 				D2B2B8AE2B565FC100BBE63F /* AppDelegate.swift in Sources */,
@@ -475,7 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2B2B8C92B565FC200BBE63F /* Go2meTROTests.swift in Sources */,
-				D2976C812B57C351009F6149 /* NetworkPart.swift in Sources */,
+				D2976C812B57C351009F6149 /* DanhaiLRTRequestManager.swift in Sources */,
 				D2DDE01E2B5680B800ECF8C8 /* V2Model.swift in Sources */,
 				D28C7CD52B58F5B100FB9EB7 /* MainViewController.swift in Sources */,
 			);
@@ -486,7 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2B2B8D52B565FC200BBE63F /* Go2meTROUITestsLaunchTests.swift in Sources */,
-				D2976C822B57C351009F6149 /* NetworkPart.swift in Sources */,
+				D2976C822B57C351009F6149 /* DanhaiLRTRequestManager.swift in Sources */,
 				D2DDE01F2B5680B800ECF8C8 /* V2Model.swift in Sources */,
 				D2B2B8D32B565FC200BBE63F /* Go2meTROUITests.swift in Sources */,
 				D28C7CD62B58F5B100FB9EB7 /* MainViewController.swift in Sources */,
