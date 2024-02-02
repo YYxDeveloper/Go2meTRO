@@ -8,59 +8,52 @@
 import Foundation
 import RxAlamofire
 import RxSwift
-
-class DanhaiLRTRequestManager{
+enum LRT_URLs:String {
+    //未來要從後端取
+    case ntmetroHome,apiFailInstead = "https://trainsmonitor.ntmetro.com.tw/"
+    case ntmetroV = "https://trainsmonitor.ntmetro.com.tw/public/api/getCurrentTimetableV2/V"
+    case ntmetroK = "https://trainsmonitor.ntmetro.com.tw/public/api/getCurrentTimetableV2/K"
+}
+class DanhaiLRTRouteManager{
     enum routeError:Error {
         case mappingError
     }
+    enum witchLRTLine: Int {
+        case upToHongshulin, upToKanding, upToWahrf
+        case downToToKanding, downToWahrf, downToHongshulin
+    }
     let errorSubject = PublishSubject<Error>()
-
-    class RouteManager{
-       
-        enum witchLRTLine: Int {
-            case upToHongshulin, upToKanding, upToWahrf
-            case downToToKanding, downToWahrf, downToHongshulin
-        }
-        let currentTimeSubject = PublishSubject<V2CurrentTimeModel>()
-        var upToKanding = [String :GpsData]()
-        var downToToKanding = [String :GpsData]()
-        var upToWahrf = [String :GpsData]()
-        var downToWahrf = [String :GpsData]()
-        var upToHongshulin = [String :GpsData]()
-        var downToHongshulin = [String :GpsData]()
-        
-        func handelModel(model:V2CurrentTimeModel) throws {
-            if let data = model.data {
-                upToHongshulin = data.gpsData[witchLRTLine.upToHongshulin.rawValue]
-                upToKanding = data.gpsData[witchLRTLine.upToKanding.rawValue]
-                upToWahrf = data.gpsData[witchLRTLine.upToWahrf.rawValue]
-                downToToKanding = data.gpsData[witchLRTLine.downToToKanding.rawValue]
-                downToWahrf = data.gpsData[witchLRTLine.downToWahrf.rawValue]
-                downToHongshulin = data.gpsData[witchLRTLine.downToHongshulin.rawValue]
-                
-
-            }else{
-                throw routeError.mappingError
-            }
-
-        }
-    }
-    static let shared = DanhaiLRTRequestManager()
+    let currentTimeSubject = PublishSubject<V2CurrentTimeModel>()
+    let timeToUpdateSubject = PublishSubject<Void>()
+    //datas
+    var upToKandingData = [String :GpsData]()
+    var downToToKandingData = [String :GpsData]()
+    var upToWahrfData = [String :GpsData]()
+    var downToWahrfData = [String :GpsData]()
+    var upToHongshulinData = [String :GpsData]()
+    var downToHongshulinData = [String :GpsData]()
+    
     private let disposeBag = DisposeBag()
-    let updateInterVal:TimeInterval = 8
-    let routeManager = RouteManager()
-    
-    enum urls:String {
-        //未來要從後端取
-        case ntmetroHome,apiFailInstead = "https://trainsmonitor.ntmetro.com.tw/"
-        case ntmetroV = "https://trainsmonitor.ntmetro.com.tw/public/api/getCurrentTimetableV2/V"
-        case ntmetroK = "https://trainsmonitor.ntmetro.com.tw/public/api/getCurrentTimetableV2/K"
+
+    func handelModel(model:V2CurrentTimeModel) throws {
+        if let data = model.data {
+            upToHongshulinData = data.gpsData[witchLRTLine.upToHongshulin.rawValue]
+            upToKandingData = data.gpsData[witchLRTLine.upToKanding.rawValue]
+            upToWahrfData = data.gpsData[witchLRTLine.upToWahrf.rawValue]
+            downToToKandingData = data.gpsData[witchLRTLine.downToToKanding.rawValue]
+            downToWahrfData = data.gpsData[witchLRTLine.downToWahrf.rawValue]
+            downToHongshulinData = data.gpsData[witchLRTLine.downToHongshulin.rawValue]
+            timeToUpdateSubject.onNext(())
+            
+        }else{
+            throw routeError.mappingError
+        }
+        
     }
-    
     func startRequestAll() {
-       
-        _ = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
-            requestJSON(.post, DanhaiLRTRequestManager.urls.ntmetroV.rawValue)
+        
+        _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in
+            requestJSON(.post, LRT_URLs.ntmetroV.rawValue)
             
                 .subscribe(onNext: { [unowned self](_,dic) in
                     do {
@@ -68,7 +61,7 @@ class DanhaiLRTRequestManager{
                         let content = try JSONSerialization.data(withJSONObject: dic, options: [])
                         
                         let model = try JSONDecoder().decode(V2CurrentTimeModel.self, from: content)
-                        routeManager.currentTimeSubject.onNext(model)
+                        self.currentTimeSubject.onNext(model)
                     } catch {
                     }
                 }, onError: { [unowned self] error in
@@ -77,18 +70,75 @@ class DanhaiLRTRequestManager{
                 }).disposed(by: self.disposeBag)
             
         }
+        
+        
+    }
+}
+
+class DanhaiLRTRequestManager{
+    
+
+    static let shared = DanhaiLRTRequestManager()
+    let updateInterVal:TimeInterval = 8
+    
+    lazy var routeManager:DanhaiLRTRouteManager = {
+        let routeManager = DanhaiLRTRouteManager()
         routeManager.currentTimeSubject.subscribe(onNext: {[unowned self] model in
             
             do {
                 try  self.routeManager.handelModel(model: model)
+                
             } catch  {
                 self.errorSubject.onNext(error)
             }
-           
+            
             
         }, onError: { [unowned self] error in
             self.errorSubject.onNext(error)
         }).disposed(by: self.disposeBag)
+        
+        return routeManager
+    }()
+    
+    var errorSubject = PublishSubject<Error>()
+    let upToHongshulinSubject = PublishSubject<[String :GpsData]>()
+    let upToKandingSubject = PublishSubject<[String :GpsData]>()
+    let upToWahrfSubject = PublishSubject<[String :GpsData]>()
+    let downToToKandingSubject = PublishSubject<[String :GpsData]>()
+    let downToWahrfSubject = PublishSubject<[String :GpsData]>()
+    let downToHongshulinSubject = PublishSubject<[String :GpsData]>()
+    private let disposeBag = DisposeBag()
 
+    private var pickleupToKandingData:[String :GpsData]{
+        var pickle = routeManager.upToHongshulinData
+        pickle
+        return pickle
+    }
+    func run() {
+        self.routeManager.startRequestAll()
+        self.errorSubject = self.routeManager.errorSubject
+        routeManager.timeToUpdateSubject.subscribe(onNext: {[unowned self] _ in
+            self.upToHongshulinSubject.onNext(routeManager.upToHongshulinData)
+            self.upToKandingSubject.onNext(routeManager.upToKandingData)
+            self.upToWahrfSubject.onNext(routeManager.upToWahrfData)
+            self.downToToKandingSubject.onNext(routeManager.downToToKandingData)
+            self.downToWahrfSubject.onNext(routeManager.downToWahrfData)
+            self.downToHongshulinSubject.onNext(routeManager.downToHongshulinData)
+            
+            
+            
+        }).disposed(by: self.disposeBag)
+            
+    }
+        
+
+    
+}
+extension Dictionary{
+    fileprivate func insertAdCellAt(index:Int)->Array<[String :GpsData]>{
+        let key = V2CurrentTimeModel.messageString
+        let defaultModel = V2CurrentTimeModel.createDefaultModel()
+        let gpsData = defaultModel.data?.gpsData[0][key]
+        return [[key:gpsData!]]
     }
 }

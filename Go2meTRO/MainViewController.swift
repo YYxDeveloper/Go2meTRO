@@ -11,7 +11,6 @@ class MainViewController: UIViewController {
     let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        DanhaiLRTRequestManager.shared.startRequestAll()
 
     }
 

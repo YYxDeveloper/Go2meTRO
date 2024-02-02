@@ -25,10 +25,10 @@ class ViewController: UIViewController {
         self.view.addSubview(btn)
         
         
-        btn.rx.tap.subscribe({[unowned self] _ in
+        _ = btn.rx.tap.subscribe({[unowned self] _ in
             
         }).disposed(by: disposeBag)
-        webView.load(URLRequest(url: URL(string: DanhaiLRTRequestManager.urls.ntmetroHome.rawValue)!))
+        webView.load(URLRequest(url: URL(string: LRT_URLs.ntmetroHome.rawValue)!))
         webView.rx.didFinishLoad.subscribe(
             onNext: {[unowned self] _ in
                 webView.evaluateJavaScript("""
