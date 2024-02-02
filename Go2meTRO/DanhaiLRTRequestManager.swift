@@ -8,6 +8,12 @@
 import Foundation
 import RxAlamofire
 import RxSwift
+
+
+enum GeneralError:Error {
+    case optionalError,mappingError
+}
+typealias eachStationInfo = (stations:[String],GpsDatas:[GpsData])
 enum LRT_URLs:String {
     //未來要從後端取
     case ntmetroHome,apiFailInstead = "https://trainsmonitor.ntmetro.com.tw/"
@@ -15,8 +21,14 @@ enum LRT_URLs:String {
     case ntmetroK = "https://trainsmonitor.ntmetro.com.tw/public/api/getCurrentTimetableV2/K"
 }
 class DanhaiLRTRouteManager{
-    enum routeError:Error {
-        case mappingError
+    enum upToHongshulinStationKey:String, CaseIterable {
+        case V01,V02,V03,V04,V05,V06,V07,V08,V09
+    }
+    enum upToKandingStationKey:String, CaseIterable{
+        case V10,V11
+    }
+    enum upToWharfStationKey:String, CaseIterable{
+        case V28,V27,V26
     }
     enum witchLRTLine: Int {
         case upToHongshulin, upToKanding, upToWahrf
@@ -46,7 +58,7 @@ class DanhaiLRTRouteManager{
             timeToUpdateSubject.onNext(())
             
         }else{
-            throw routeError.mappingError
+            throw GeneralError.mappingError
         }
         
     }
@@ -101,24 +113,36 @@ class DanhaiLRTRequestManager{
     }()
     
     var errorSubject = PublishSubject<Error>()
-    let upToHongshulinSubject = PublishSubject<[String :GpsData]>()
+    let upToHongshulinSubject = PublishSubject<eachStationInfo>()
     let upToKandingSubject = PublishSubject<[String :GpsData]>()
     let upToWahrfSubject = PublishSubject<[String :GpsData]>()
     let downToToKandingSubject = PublishSubject<[String :GpsData]>()
     let downToWahrfSubject = PublishSubject<[String :GpsData]>()
     let downToHongshulinSubject = PublishSubject<[String :GpsData]>()
     private let disposeBag = DisposeBag()
+    
 
-    private var pickleupToKandingData:[String :GpsData]{
-        var pickle = routeManager.upToHongshulinData
-        pickle
-        return pickle
+   
+
+    private func sortGpsData<T: CaseIterable>(stationKey enumType: T.Type) -> eachStationInfo{
+        var datas = [GpsData]()
+        var keys = [String]()
+        for key in DanhaiLRTRouteManager.upToHongshulinStationKey.allCases {
+            if let data = routeManager.upToHongshulinData[key.rawValue] {
+                datas.append(data)
+                keys.append(key.rawValue)
+            }else{
+                errorSubject.onNext(GeneralError.optionalError)
+            }
+        }
+        return (keys,datas)
     }
+
     func run() {
         self.routeManager.startRequestAll()
         self.errorSubject = self.routeManager.errorSubject
         routeManager.timeToUpdateSubject.subscribe(onNext: {[unowned self] _ in
-            self.upToHongshulinSubject.onNext(routeManager.upToHongshulinData)
+            self.upToHongshulinSubject.onNext(sortGpsData(stationKey: DanhaiLRTRouteManager.upToHongshulinStationKey.self))
             self.upToKandingSubject.onNext(routeManager.upToKandingData)
             self.upToWahrfSubject.onNext(routeManager.upToWahrfData)
             self.downToToKandingSubject.onNext(routeManager.downToToKandingData)
