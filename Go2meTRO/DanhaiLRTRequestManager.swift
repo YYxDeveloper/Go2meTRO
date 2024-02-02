@@ -134,11 +134,3 @@ class DanhaiLRTRequestManager{
 
     
 }
-extension Dictionary{
-    fileprivate func insertAdCellAt(index:Int)->Array<[String :GpsData]>{
-        let key = V2CurrentTimeModel.messageString
-        let defaultModel = V2CurrentTimeModel.createDefaultModel()
-        let gpsData = defaultModel.data?.gpsData[0][key]
-        return [[key:gpsData!]]
-    }
-}
