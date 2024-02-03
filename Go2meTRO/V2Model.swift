@@ -18,7 +18,7 @@ struct DataContainer: Decodable {
 }
 
 struct GpsData: Codable {
-    let carNum: String
+    let carNum: String?
     let drivingTime: String
     let routeId: Int?
     let time: Int

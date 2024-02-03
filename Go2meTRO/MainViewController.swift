@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         DanhaiLRTRequestManager.shared.upToHongshulinSubject.subscribe(onNext: {eachStationInfo in
-            print("xxxxx\(eachStationInfo)")
+            print("xxxxx\(eachStationInfo  )")
         }).disposed(by: self.disposeBag)
     }
 

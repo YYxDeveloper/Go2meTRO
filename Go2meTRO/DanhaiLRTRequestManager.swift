@@ -30,6 +30,16 @@ class DanhaiLRTRouteManager{
     enum upToWharfStationKey:String, CaseIterable{
         case V28,V27,V26
     }
+    //down
+    enum downToKandingStationKey:String, CaseIterable{
+        case V11,V10
+    }
+    enum downToWharfStationKey:String, CaseIterable{
+        case V26,V27,V28
+    }
+    enum downToHongshulinStationKey:String, CaseIterable {
+        case V09,V08,V07,V06,V05,V04,V03,V02,V01
+    }
     enum witchLRTLine: Int {
         case upToHongshulin, upToKanding, upToWahrf
         case downToToKanding, downToWahrf, downToHongshulin
@@ -114,40 +124,49 @@ class DanhaiLRTRequestManager{
     
     var errorSubject = PublishSubject<Error>()
     let upToHongshulinSubject = PublishSubject<eachStationInfo>()
-    let upToKandingSubject = PublishSubject<[String :GpsData]>()
-    let upToWahrfSubject = PublishSubject<[String :GpsData]>()
-    let downToToKandingSubject = PublishSubject<[String :GpsData]>()
-    let downToWahrfSubject = PublishSubject<[String :GpsData]>()
-    let downToHongshulinSubject = PublishSubject<[String :GpsData]>()
+    let upToKandingSubject = PublishSubject<eachStationInfo>()
+    let upToWahrfSubject = PublishSubject<eachStationInfo>()
+    let downToToKandingSubject = PublishSubject<eachStationInfo>()
+    let downToWahrfSubject = PublishSubject<eachStationInfo>()
+    let downToHongshulinSubject = PublishSubject<eachStationInfo>()
     private let disposeBag = DisposeBag()
     
 
-   
+    func sortGpsData<T: RawRepresentable & CaseIterable>(stationKey enumType: T.Type, inputGpsData: [String: GpsData]) -> eachStationInfo where T.RawValue == String {
 
-    private func sortGpsData<T: CaseIterable>(stationKey enumType: T.Type) -> eachStationInfo{
         var datas = [GpsData]()
         var keys = [String]()
-        for key in DanhaiLRTRouteManager.upToHongshulinStationKey.allCases {
-            if let data = routeManager.upToHongshulinData[key.rawValue] {
-                datas.append(data)
+        for key in T.allCases {
+            if let theGpsData = inputGpsData[key.rawValue] {
+                datas.append(theGpsData)
                 keys.append(key.rawValue)
             }else{
                 errorSubject.onNext(GeneralError.optionalError)
+
             }
         }
+        
         return (keys,datas)
-    }
 
+
+    }
     func run() {
         self.routeManager.startRequestAll()
         self.errorSubject = self.routeManager.errorSubject
         routeManager.timeToUpdateSubject.subscribe(onNext: {[unowned self] _ in
-            self.upToHongshulinSubject.onNext(sortGpsData(stationKey: DanhaiLRTRouteManager.upToHongshulinStationKey.self))
-            self.upToKandingSubject.onNext(routeManager.upToKandingData)
-            self.upToWahrfSubject.onNext(routeManager.upToWahrfData)
-            self.downToToKandingSubject.onNext(routeManager.downToToKandingData)
-            self.downToWahrfSubject.onNext(routeManager.downToWahrfData)
-            self.downToHongshulinSubject.onNext(routeManager.downToHongshulinData)
+            self.upToHongshulinSubject.onNext(sortGpsData(stationKey: DanhaiLRTRouteManager.upToHongshulinStationKey.self, inputGpsData: routeManager.upToHongshulinData))
+//            self.upToKandingSubject.onNext(routeManager.upToKandingData)
+            self.upToKandingSubject.onNext(sortGpsData(stationKey: DanhaiLRTRouteManager.upToKandingStationKey.self, inputGpsData: routeManager.upToKandingData))
+//            self.upToWahrfSubject.onNext(routeManager.upToWahrfData)
+            self.upToWahrfSubject.onNext(sortGpsData(stationKey: DanhaiLRTRouteManager.upToWharfStationKey.self, inputGpsData: routeManager.upToWahrfData))
+            
+            //down
+//            self.downToToKandingSubject.onNext(routeManager.downToToKandingData)
+            self.downToToKandingSubject.onNext(sortGpsData(stationKey: DanhaiLRTRouteManager.downToKandingStationKey.self, inputGpsData: routeManager.downToToKandingData))
+//            self.downToWahrfSubject.onNext(routeManager.downToWahrfData)
+            self.downToWahrfSubject.onNext(sortGpsData(stationKey: DanhaiLRTRouteManager.downToWharfStationKey.self, inputGpsData: routeManager.downToWahrfData))
+//            self.downToHongshulinSubject.onNext(routeManager.downToHongshulinData)
+            self.downToHongshulinSubject.onNext(sortGpsData(stationKey: DanhaiLRTRouteManager.downToHongshulinStationKey.self, inputGpsData: routeManager.downToHongshulinData))
             
             
             
