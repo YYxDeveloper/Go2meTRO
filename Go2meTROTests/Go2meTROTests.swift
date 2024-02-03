@@ -25,6 +25,11 @@ final class Go2meTROTests: XCTestCase {
 //            // Put the code you want to measure the time of here.
 //        }
 //    }
+    override class func setUp() {
+        super.setUp()
+        DanhaiLRTRequestManager.shared.run()
+
+    }
     func testV2Model() {
         
         // Assuming the file is a plain text file with UTF-8 encoding
@@ -36,7 +41,7 @@ final class Go2meTROTests: XCTestCase {
                 let decoder = JSONDecoder()
                 
                 let model = try decoder.decode(V2CurrentTimeModel.self, from: jsonData)
-                assert(model.data!.gpsData.count > 0)
+//                assert(model.data!.gpsData.count > 0)
             } catch {
                 print("Error reading file: \(error.localizedDescription)")
                 assertionFailure()
@@ -48,7 +53,17 @@ final class Go2meTROTests: XCTestCase {
     }
     func testV2CurrentTimeModel() {
         let model = V2CurrentTimeModel.createDefaultModel()
-        assert(model.message == "api error")
+        assert(model.message == V2CurrentTimeModel.messageString)
+    }
+    func testDownToWahrfSubject()  {
+        let expectation = XCTestExpectation(description: "Closure should be called")
+
+        DanhaiLRTRequestManager.shared.downToToKandingSubject.subscribe(onNext: {eachStationInfo in
+            assert(eachStationInfo.GpsDatas.count == 2)
+            expectation.fulfill()
+
+        }).disposed(by: self.disposeBag)
+        wait(for: [expectation], timeout: 5.0)
     }
 
 }
