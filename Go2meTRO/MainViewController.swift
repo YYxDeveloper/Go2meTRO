@@ -7,13 +7,29 @@
 
 import UIKit
 import RxSwift
+import RxDataSources
 class MainViewController: UIViewController {
     let disposeBag = DisposeBag()
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         DanhaiLRTRequestManager.shared.upToHongshulinSubject.subscribe(onNext: {eachStationInfo in
             print("xxxxx\(eachStationInfo)")
         }).disposed(by: self.disposeBag)
+        
+        
+        let sub = DanhaiLRTRequestManager.shared.upToHongshulinSubject.map { eachStationInfo -> SectionModel in
+            let section = SectionModel(model: "", items:[eachStationInfo])
+            
+            
+//            return eachStationInfo.GpsDatas
+            return section
+        }
+        
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Int>>(configureCell: configureCell)
+
+           
     }
 
     /*

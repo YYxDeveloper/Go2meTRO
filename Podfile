@@ -16,6 +16,8 @@ target 'Go2meTRO' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxAlamofire'
+  pod 'RxDataSources'
+
 
 
   target 'Go2meTROTests' do
@@ -24,7 +26,7 @@ target 'Go2meTRO' do
     pod 'RxSwift'
     pod 'RxCocoa'
     pod 'RxAlamofire'
-
+    pod 'RxDataSources'
   end
 
   target 'Go2meTROUITests' do
@@ -32,7 +34,7 @@ target 'Go2meTRO' do
     pod 'RxSwift'
     pod 'RxCocoa'
     pod 'RxAlamofire'
-
+    pod 'RxDataSources'
   end
 
 end

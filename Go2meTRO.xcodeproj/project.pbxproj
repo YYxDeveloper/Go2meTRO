@@ -29,6 +29,9 @@
 		D2B2B8D32B565FC200BBE63F /* Go2meTROUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2B8D22B565FC200BBE63F /* Go2meTROUITests.swift */; };
 		D2B2B8D52B565FC200BBE63F /* Go2meTROUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2B8D42B565FC200BBE63F /* Go2meTROUITestsLaunchTests.swift */; };
 		D2C2B0A72B591A7500AAE90A /* V2DefaultModel.json in Resources */ = {isa = PBXBuildFile; fileRef = D2C2B0A62B591A7500AAE90A /* V2DefaultModel.json */; };
+		D2C92EA92B6E892800DB2D8D /* OriginalCurrentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C92EA82B6E892800DB2D8D /* OriginalCurrentTableViewCell.swift */; };
+		D2C92EAA2B6E892800DB2D8D /* OriginalCurrentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C92EA82B6E892800DB2D8D /* OriginalCurrentTableViewCell.swift */; };
+		D2C92EAB2B6E892800DB2D8D /* OriginalCurrentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C92EA82B6E892800DB2D8D /* OriginalCurrentTableViewCell.swift */; };
 		D2DDE0192B56805C00ECF8C8 /* V2Model.json in Resources */ = {isa = PBXBuildFile; fileRef = D2DDE0182B56805C00ECF8C8 /* V2Model.json */; };
 		D2DDE01A2B56805C00ECF8C8 /* V2Model.json in Resources */ = {isa = PBXBuildFile; fileRef = D2DDE0182B56805C00ECF8C8 /* V2Model.json */; };
 		D2DDE01B2B56805C00ECF8C8 /* V2Model.json in Resources */ = {isa = PBXBuildFile; fileRef = D2DDE0182B56805C00ECF8C8 /* V2Model.json */; };
@@ -84,6 +87,7 @@
 		D2B2B8D22B565FC200BBE63F /* Go2meTROUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Go2meTROUITests.swift; sourceTree = "<group>"; };
 		D2B2B8D42B565FC200BBE63F /* Go2meTROUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Go2meTROUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D2C2B0A62B591A7500AAE90A /* V2DefaultModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = V2DefaultModel.json; sourceTree = "<group>"; };
+		D2C92EA82B6E892800DB2D8D /* OriginalCurrentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalCurrentTableViewCell.swift; sourceTree = "<group>"; };
 		D2DDE0182B56805C00ECF8C8 /* V2Model.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = V2Model.json; sourceTree = "<group>"; };
 		D2DDE01C2B5680B800ECF8C8 /* V2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +178,7 @@
 				D2C2B0A62B591A7500AAE90A /* V2DefaultModel.json */,
 				D2DDE01C2B5680B800ECF8C8 /* V2Model.swift */,
 				D2B2B8B32B565FC100BBE63F /* Main.storyboard */,
+				D2C92EA82B6E892800DB2D8D /* OriginalCurrentTableViewCell.swift */,
 				D2B2B8B92B565FC200BBE63F /* Assets.xcassets */,
 				D2B2B8BB2B565FC200BBE63F /* LaunchScreen.storyboard */,
 				D2B2B8BE2B565FC200BBE63F /* Go2meTRO.entitlements */,
@@ -468,6 +473,7 @@
 				D2DDE01D2B5680B800ECF8C8 /* V2Model.swift in Sources */,
 				D2B2B8AE2B565FC100BBE63F /* AppDelegate.swift in Sources */,
 				D2B2B8B02B565FC100BBE63F /* SceneDelegate.swift in Sources */,
+				D2C92EA92B6E892800DB2D8D /* OriginalCurrentTableViewCell.swift in Sources */,
 				D24F0FD02B6CE6AE00D32CA3 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +486,7 @@
 				D2B2B8C92B565FC200BBE63F /* Go2meTROTests.swift in Sources */,
 				D2976C812B57C351009F6149 /* DanhaiLRTRequestManager.swift in Sources */,
 				D2DDE01E2B5680B800ECF8C8 /* V2Model.swift in Sources */,
+				D2C92EAA2B6E892800DB2D8D /* OriginalCurrentTableViewCell.swift in Sources */,
 				D28C7CD52B58F5B100FB9EB7 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,6 +501,7 @@
 				D2B2B8D32B565FC200BBE63F /* Go2meTROUITests.swift in Sources */,
 				D28C7CD62B58F5B100FB9EB7 /* MainViewController.swift in Sources */,
 				D24F0FD22B6CE6AE00D32CA3 /* MainViewModel.swift in Sources */,
+				D2C92EAB2B6E892800DB2D8D /* OriginalCurrentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
