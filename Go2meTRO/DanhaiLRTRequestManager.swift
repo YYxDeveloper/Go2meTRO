@@ -155,21 +155,13 @@ class DanhaiLRTRequestManager{
         self.errorSubject = self.routeManager.errorSubject
         routeManager.timeToUpdateSubject.subscribe(onNext: {[unowned self] _ in
             self.upToHongshulinSubject.onNext(sortGpsData(stationKey: DanhaiLRTRouteManager.upToHongshulinStationKey.self, inputGpsData: routeManager.upToHongshulinData))
-//            self.upToKandingSubject.onNext(routeManager.upToKandingData)
             self.upToKandingSubject.onNext(sortGpsData(stationKey: DanhaiLRTRouteManager.upToKandingStationKey.self, inputGpsData: routeManager.upToKandingData))
-//            self.upToWahrfSubject.onNext(routeManager.upToWahrfData)
             self.upToWahrfSubject.onNext(sortGpsData(stationKey: DanhaiLRTRouteManager.upToWharfStationKey.self, inputGpsData: routeManager.upToWahrfData))
             
             //down
-//            self.downToToKandingSubject.onNext(routeManager.downToToKandingData)
             self.downToToKandingSubject.onNext(sortGpsData(stationKey: DanhaiLRTRouteManager.downToKandingStationKey.self, inputGpsData: routeManager.downToToKandingData))
-//            self.downToWahrfSubject.onNext(routeManager.downToWahrfData)
             self.downToWahrfSubject.onNext(sortGpsData(stationKey: DanhaiLRTRouteManager.downToWharfStationKey.self, inputGpsData: routeManager.downToWahrfData))
-//            self.downToHongshulinSubject.onNext(routeManager.downToHongshulinData)
             self.downToHongshulinSubject.onNext(sortGpsData(stationKey: DanhaiLRTRouteManager.downToHongshulinStationKey.self, inputGpsData: routeManager.downToHongshulinData))
-            
-            
-            
         }).disposed(by: self.disposeBag)
             
     }
