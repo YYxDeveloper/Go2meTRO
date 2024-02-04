@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OriginalCurrentTableViewCell: UITableViewCell {
+class UpToHongshulinTableViewCell: UITableViewCell {
 
     @IBOutlet weak var tt: UILabel!
     override func awakeFromNib() {
