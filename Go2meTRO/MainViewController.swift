@@ -11,29 +11,43 @@ import RxDataSources
 import RxCocoa
 class MainViewController: UIViewController {
     let disposeBag = DisposeBag()
+    @IBOutlet weak var upDownBtn: UIButton!
     @IBOutlet weak var upToHongshulinTableView: UITableView!
     
     let upToHongshulinTableViewDataDelegate = UpToHongshulinTableViewDataDelegate()
     let upToHongshulinTableViewDataSource = UpToHongshulinTableViewDataSource()
+    
+    var directionNow = DirectionNow.up
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//       let upToHongshulinTableViewDelegate = UpToHongshulinTableViewDelegate()
-//        upToHongshulinTableView.dataSource = upToHongshulinTableViewDelegate
-//        upToHongshulinTableView.delegate   = upToHongshulinTableViewDelegate
+        //       let upToHongshulinTableViewDelegate = UpToHongshulinTableViewDelegate()
+        //        upToHongshulinTableView.dataSource = upToHongshulinTableViewDelegate
+        //        upToHongshulinTableView.delegate   = upToHongshulinTableViewDelegate
         
         upToHongshulinTableView.delegate = upToHongshulinTableViewDataDelegate
         upToHongshulinTableView.dataSource = upToHongshulinTableViewDataSource
         upToHongshulinTableView.register(CustomSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: "CustomSectionHeaderView")
-
-        DanhaiLRTRequestManager.shared.upToHongshulinSubject.subscribe(onNext: {eachStationInfo in
-            print("xxxxx\(eachStationInfo)")
-            self.upToHongshulinTableView.reloadData()
-        }).disposed(by: self.disposeBag)
+        
+        DanhaiLRTRequestManager.shared.upToHongshulinSubject.asDriver(onErrorJustReturn: emptyEachStatinInfo).filter{
+                return !$0.stations.isEmpty
+        }.drive(onNext: {eachStationInfo in
+                print("xxxxx\(eachStationInfo)")
+                self.upToHongshulinTableView.reloadData()
+            }).disposed(by: self.disposeBag)
         
         
         
-
-           
+        upDownBtn.rx.tap
+            .subscribe(onNext: {[weak self] in
+                
+                
+            }).disposed(by: self.disposeBag)
+        
+        
+        
+        
+        
     }
 }
 class UpToHongshulinTableViewDataSource:NSObject, UITableViewDataSource{
@@ -48,9 +62,7 @@ class UpToHongshulinTableViewDataSource:NSObject, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        3
-    }
+    func numberOfSections(in tableView: UITableView) -> Int {3}
     
 }
 class UpToHongshulinTableViewDataDelegate:NSObject, UITableViewDelegate{
@@ -58,9 +70,10 @@ class UpToHongshulinTableViewDataDelegate:NSObject, UITableViewDelegate{
         return 100
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let view = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 300, height: 100)))
-//        view.backgroundColor = .blue
-//        return view
+        //        let view = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 300, height: 100)))
+        //        view.backgroundColor = .blue
+        //        return view
+        
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CustomSectionHeaderView") as! CustomSectionHeaderView
         headerView.titleLabel.text = "ggggg"
         return headerView
