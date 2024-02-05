@@ -9,11 +9,15 @@ import Foundation
 import RxAlamofire
 import RxSwift
 
-
+enum DirectionNow {
+    case up //上行
+    case down //下行
+}
 enum GeneralError:Error {
     case optionalError,mappingError
 }
 typealias eachStationInfo = (stations:[String],GpsDatas:[GpsData])
+var emptyEachStatinInfo:eachStationInfo{return ([String](),[GpsData]())}
 enum LRT_URLs:String {
     //未來要從後端取
     case ntmetroHome,apiFailInstead = "https://trainsmonitor.ntmetro.com.tw/"
@@ -123,12 +127,12 @@ class DanhaiLRTRequestManager{
     }()
     
     var errorSubject = PublishSubject<Error>()
-    let upToHongshulinSubject = PublishSubject<eachStationInfo>()
-    let upToKandingSubject = PublishSubject<eachStationInfo>()
-    let upToWahrfSubject = PublishSubject<eachStationInfo>()
-    let downToToKandingSubject = PublishSubject<eachStationInfo>()
-    let downToWahrfSubject = PublishSubject<eachStationInfo>()
-    let downToHongshulinSubject = PublishSubject<eachStationInfo>()
+    let upToHongshulinSubject = BehaviorSubject<eachStationInfo>.init(value: ([String](),[GpsData]()))
+    let upToKandingSubject = BehaviorSubject<eachStationInfo>.init(value: ([String](),[GpsData]()))
+    let upToWahrfSubject = BehaviorSubject<eachStationInfo>.init(value: ([String](),[GpsData]()))
+    let downToToKandingSubject = BehaviorSubject<eachStationInfo>.init(value: ([String](),[GpsData]()))
+    let downToWahrfSubject = BehaviorSubject<eachStationInfo>.init(value: ([String](),[GpsData]()))
+    let downToHongshulinSubject = BehaviorSubject<eachStationInfo>.init(value: ([String](),[GpsData]()))
     private let disposeBag = DisposeBag()
     
 
