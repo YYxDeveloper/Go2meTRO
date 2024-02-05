@@ -127,12 +127,12 @@ class DanhaiLRTRequestManager{
     }()
     
     var errorSubject = PublishSubject<Error>()
-    let upToHongshulinSubject = BehaviorSubject<eachStationInfo>.init(value: ([String](),[GpsData]()))
-    let upToKandingSubject = BehaviorSubject<eachStationInfo>.init(value: ([String](),[GpsData]()))
-    let upToWahrfSubject = BehaviorSubject<eachStationInfo>.init(value: ([String](),[GpsData]()))
-    let downToToKandingSubject = BehaviorSubject<eachStationInfo>.init(value: ([String](),[GpsData]()))
-    let downToWahrfSubject = BehaviorSubject<eachStationInfo>.init(value: ([String](),[GpsData]()))
-    let downToHongshulinSubject = BehaviorSubject<eachStationInfo>.init(value: ([String](),[GpsData]()))
+    let upToHongshulinSubject = BehaviorSubject<eachStationInfo>.init(value: (emptyEachStatinInfo))
+    let upToKandingSubject = BehaviorSubject<eachStationInfo>.init(value: (emptyEachStatinInfo))
+    let upToWahrfSubject = BehaviorSubject<eachStationInfo>.init(value: (emptyEachStatinInfo))
+    let downToToKandingSubject = BehaviorSubject<eachStationInfo>.init(value: (emptyEachStatinInfo))
+    let downToWahrfSubject = BehaviorSubject<eachStationInfo>.init(value: (emptyEachStatinInfo))
+    let downToHongshulinSubject = BehaviorSubject<eachStationInfo>.init(value: (emptyEachStatinInfo))
     private let disposeBag = DisposeBag()
     
 
