@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "SQP-eU-JkY"; */
+"SQP-eU-JkY.text" = "Label";
+
+/* Class = "UIButton"; configuration.title = "UP||DOWN"; ObjectID = "Xzd-1G-XyE"; */
+"Xzd-1G-XyE.configuration.title" = "UP||DOWN";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Xzd-1G-XyE"; */
+"Xzd-1G-XyE.normalTitle" = "Button";
