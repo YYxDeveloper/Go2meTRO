@@ -44,7 +44,7 @@ class DanhaiLRTRouteManager{
     enum downToHongshulinStationKey:String, CaseIterable {
         case V09,V08,V07,V06,V05,V04,V03,V02,V01
     }
-    enum witchLRTLine: Int {
+    enum witchLRTLine: Int, CaseIterable {
         case upToHongshulin, upToKanding, upToWahrf
         case downToToKanding, downToWahrf, downToHongshulin
     }
@@ -172,4 +172,9 @@ class DanhaiLRTRequestManager{
         
 
     
+}
+extension BehaviorSubject{
+    func forceGetValue() -> Element{
+        return try! self.value()
+    }
 }

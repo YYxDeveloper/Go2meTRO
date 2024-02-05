@@ -14,11 +14,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var upDownBtn: UIButton!
     @IBOutlet weak var upToHongshulinTableView: UITableView!
     
-    let upToHongshulinTableViewDataDelegate = UpToHongshulinTableViewDataDelegate()
-    let upToHongshulinTableViewDataSource = UpToHongshulinTableViewDataSource()
     
     var directionNow = DirectionNow.up
-    
+    lazy var upToHongshulinTableViewDataDelegate = UpToHongshulinTableViewDataDelegate(directionNow: self.directionNow)
+    lazy var upToHongshulinTableViewDataSource = UpToHongshulinTableViewDataSource(directionNow: self.directionNow)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //       let upToHongshulinTableViewDelegate = UpToHongshulinTableViewDelegate()
@@ -32,15 +32,16 @@ class MainViewController: UIViewController {
         DanhaiLRTRequestManager.shared.upToHongshulinSubject.asDriver(onErrorJustReturn: emptyEachStatinInfo).filter{
                 return !$0.stations.isEmpty
         }.drive(onNext: {eachStationInfo in
-                print("xxxxx\(eachStationInfo)")
+//                print("xxxxx\(eachStationInfo)")
                 self.upToHongshulinTableView.reloadData()
             }).disposed(by: self.disposeBag)
         
         
         
         upDownBtn.rx.tap
-            .subscribe(onNext: {[weak self] in
-                
+            .subscribe(onNext: {[unowned self]  in
+                self.directionNow = self.directionNow == .up ? .down : .up
+                print("cccc::\(self.directionNow)")
                 
             }).disposed(by: self.disposeBag)
         
@@ -51,6 +52,12 @@ class MainViewController: UIViewController {
     }
 }
 class UpToHongshulinTableViewDataSource:NSObject, UITableViewDataSource{
+    var directionNow:DirectionNow
+    
+    init(directionNow: DirectionNow) {
+        self.directionNow = directionNow
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UpToHongshulinTableViewCell", for: indexPath)
         cell.contentView.backgroundColor = .red
@@ -62,10 +69,15 @@ class UpToHongshulinTableViewDataSource:NSObject, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
-    func numberOfSections(in tableView: UITableView) -> Int {3}
+    func numberOfSections(in tableView: UITableView) -> Int {DanhaiLRTRouteManager.witchLRTLine.allCases.count/2}
     
 }
 class UpToHongshulinTableViewDataDelegate:NSObject, UITableViewDelegate{
+    var directionNow:DirectionNow
+    
+    init(directionNow: DirectionNow) {
+        self.directionNow = directionNow
+    }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 100
     }
@@ -73,7 +85,35 @@ class UpToHongshulinTableViewDataDelegate:NSObject, UITableViewDelegate{
         //        let view = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 300, height: 100)))
         //        view.backgroundColor = .blue
         //        return view
-        
+        switch self.directionNow {
+        case .up:
+            switch section {
+            case 0:
+                let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CustomSectionHeaderView") as! CustomSectionHeaderView
+                headerView.titleLabel.text = "ggggg"
+                return headerView
+            case 1:
+                break
+            case 2:
+                break
+            default:
+                //use default value in View
+                assertionFailure()
+            }
+        case .down:
+            switch section {
+            case 0:
+                break
+            case 1:
+                break
+            case 2:
+                break
+            default:
+                //use default value in View
+                assertionFailure()
+            }
+        }
+       
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CustomSectionHeaderView") as! CustomSectionHeaderView
         headerView.titleLabel.text = "ggggg"
         return headerView
