@@ -17,7 +17,13 @@ enum GeneralError:Error {
     case optionalError,mappingError
 }
 typealias eachStationInfo = (stations:[String],GpsDatas:[GpsData])
-var emptyEachStatinInfo:eachStationInfo{return ([String](),[GpsData]())}
+var emptyEachStatinInfo:eachStationInfo{
+    let defaultModel = V2CurrentTimeModel.createDefaultModel()
+    let defGpsData:GpsData = (defaultModel.data?.gpsData[0][V2CurrentTimeModel.messageString])!
+    let only1Value = [defGpsData]
+    let only1key:[String] = [V2CurrentTimeModel.messageString]
+    return (only1key,only1Value)
+}
 enum LRT_URLs:String {
     //未來要從後端取
     case ntmetroHome,apiFailInstead = "https://trainsmonitor.ntmetro.com.tw/"
@@ -175,6 +181,10 @@ class DanhaiLRTRequestManager{
 }
 extension BehaviorSubject{
     func forceGetValue() -> Element{
-        return try! self.value()
+        do {
+            return try self.value()
+        } catch  {
+            return emptyEachStatinInfo as! Element
+        }
     }
 }

@@ -53,7 +53,7 @@ struct DisplaySettings: Codable {
     let activeTimeUnit: Int
 }
 extension V2CurrentTimeModel {
-    static let messageString = "V2DefaultModel"
+    static let defaultModelKey = "V2DefaultModel"
     static func createDefaultModel() -> V2CurrentTimeModel {
         let filePath = Bundle.main.path(forResource: "V2DefaultModel", ofType: "json")!
         let json = try! String(contentsOfFile: filePath, encoding: .utf8)

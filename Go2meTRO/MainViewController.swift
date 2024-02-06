@@ -59,12 +59,42 @@ class UpToHongshulinTableViewDataSource:NSObject, UITableViewDataSource{
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UpToHongshulinTableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UpToHongshulinTableViewCell", for: indexPath) as! UpToHongshulinTableViewCell
         cell.contentView.backgroundColor = .red
+        
+        switch self.directionNow {
+        case .up:
+            let info =  DanhaiLRTRequestManager.shared.upToHongshulinSubject.forceGetValue()
+            
+            cell.tt.text = info.GpsDatas[indexPath.row].carNum
+            break
+        case .down:
+            switch indexPath.row {
+            case 0:
+                break
+            case 1:
+                break
+            case 2:
+                break
+            default:
+                //use default value in View
+                break
+            }
+        }
+        
+        
+        
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        switch self.directionNow {
+        case .up:
+            let info =  DanhaiLRTRequestManager.shared.upToHongshulinSubject.forceGetValue()
+            
+            return info.GpsDatas.count
+        case .down:
+            return 8
+        }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
