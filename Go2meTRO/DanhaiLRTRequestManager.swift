@@ -19,9 +19,9 @@ enum GeneralError:Error {
 typealias eachStationInfo = (stations:[String],GpsDatas:[GpsData])
 var emptyEachStatinInfo:eachStationInfo{
     let defaultModel = V2CurrentTimeModel.createDefaultModel()
-    let defGpsData:GpsData = (defaultModel.data?.gpsData[0][V2CurrentTimeModel.messageString])!
+    let defGpsData:GpsData = (defaultModel.data?.gpsData[0][V2CurrentTimeModel.defaultModelKey])!
     let only1Value = [defGpsData]
-    let only1key:[String] = [V2CurrentTimeModel.messageString]
+    let only1key:[String] = [V2CurrentTimeModel.defaultModelKey]
     return (only1key,only1Value)
 }
 enum LRT_URLs:String {

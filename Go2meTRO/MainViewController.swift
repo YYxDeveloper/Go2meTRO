@@ -64,9 +64,16 @@ class UpToHongshulinTableViewDataSource:NSObject, UITableViewDataSource{
         
         switch self.directionNow {
         case .up:
+            
             let info =  DanhaiLRTRequestManager.shared.upToHongshulinSubject.forceGetValue()
             
-            cell.tt.text = info.GpsDatas[indexPath.row].carNum
+            if info.GpsDatas.count == 1 {
+                cell.tt.text = info.GpsDatas[0].carNum
+
+            }else{
+                cell.tt.text = info.GpsDatas[indexPath.row].carNum
+
+            }
             break
         case .down:
             switch indexPath.row {
@@ -89,9 +96,22 @@ class UpToHongshulinTableViewDataSource:NSObject, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch self.directionNow {
         case .up:
+            
+            switch section {
+            case DanhaiLRTRouteManager.witchLRTLine.upToHongshulin.rawValue:
+                return DanhaiLRTRouteManager.upToHongshulinStationKey.allCases.count
+            case DanhaiLRTRouteManager.witchLRTLine.upToKanding.rawValue:
+                return DanhaiLRTRouteManager.upToKandingStationKey.allCases.count
+
+            default:
+                return 0
+
+            }
+            
+            
             let info =  DanhaiLRTRequestManager.shared.upToHongshulinSubject.forceGetValue()
             
-            return info.GpsDatas.count
+//            return info.GpsDatas.count == 1 ?
         case .down:
             return 8
         }
