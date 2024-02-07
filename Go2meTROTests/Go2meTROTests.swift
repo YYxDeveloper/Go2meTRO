@@ -53,7 +53,7 @@ final class Go2meTROTests: XCTestCase {
     }
     func testV2CurrentTimeModel() {
         let model = V2CurrentTimeModel.createDefaultModel()
-        assert(model.message == V2CurrentTimeModel.messageString)
+        assert(model.message == V2CurrentTimeModel.defaultModelKey)
     }
     func testDownToWahrfSubject()  {
         let expectation = XCTestExpectation(description: "Closure should be called")
@@ -64,6 +64,16 @@ final class Go2meTROTests: XCTestCase {
 
         }).disposed(by: self.disposeBag)
         wait(for: [expectation], timeout: 5.0)
+    }
+    func testStringExtensiob() {
+        let intValue = 42
+        let stringValue = intValue.asString()
+        let floatValue = 3.14
+        let doubleValue = 2.718
+        
+        assert("42" == stringValue )
+        assert(floatValue.asString() == "3.14")
+        assert(doubleValue.asString() == "2.718")
     }
 
 }
