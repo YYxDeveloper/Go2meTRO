@@ -18,6 +18,8 @@ class MainViewModel {
         #endif
     }
     var openDebugSetting:Bool = false
+    var directionNow = DirectionNow.up
+
 }
 class MainViewController: UIViewController {
     let disposeBag = DisposeBag()
@@ -25,19 +27,12 @@ class MainViewController: UIViewController {
     @IBOutlet weak var upDownBtn: UIButton!
     @IBOutlet weak var upToHongshulinTableView: UITableView!
     let viewModel = MainViewModel()
-    var directionNow = DirectionNow.up
    
-    lazy var upToHongshulinTableViewDataDelegate = UpToHongshulinTableViewDataDelegate(directionNow: self.directionNow, viewModel: self.viewModel)
-    lazy var upToHongshulinTableViewDataSource = UpToHongshulinTableViewDataSource(directionNow: self.directionNow, viewModel: self.viewModel)
+  
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //       let upToHongshulinTableViewDelegate = UpToHongshulinTableViewDelegate()
-        //        upToHongshulinTableView.dataSource = upToHongshulinTableViewDelegate
-        //        upToHongshulinTableView.delegate   = upToHongshulinTableViewDelegate
-        
-        upToHongshulinTableView.delegate = upToHongshulinTableViewDataDelegate
-        upToHongshulinTableView.dataSource = upToHongshulinTableViewDataSource
+      
         upToHongshulinTableView.register(CustomSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: "CustomSectionHeaderView")
         debugModeBtn.isHidden = !MainViewModel.isDebugMode
 
@@ -60,7 +55,7 @@ class MainViewController: UIViewController {
             }).disposed(by: self.disposeBag)
         upDownBtn.rx.tap
             .subscribe(onNext: {[unowned self]  in
-                self.directionNow = self.directionNow == .up ? .down : .up
+                self.viewModel.directionNow = self.viewModel.directionNow == .up ? .down : .up
                 
             }).disposed(by: self.disposeBag)
         
@@ -70,21 +65,12 @@ class MainViewController: UIViewController {
         
     }
 }
-class UpToHongshulinTableViewDataSource:NSObject, UITableViewDataSource{
-    var directionNow:DirectionNow
-    let viewModel:MainViewModel
-
-    init(directionNow: DirectionNow, viewModel:MainViewModel) {
-        self.directionNow = directionNow
-        self.viewModel = viewModel
-        
-    }
-    
+extension MainViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DebugModeTableViewCell", for: indexPath) as! DebugModeTableViewCell
         cell.contentView.backgroundColor = .red
         
-        switch self.directionNow {
+        switch self.viewModel.directionNow {
         case .up:
             
             let info =  DanhaiLRTRequestManager.shared.upToHongshulinSubject.forceGetValue()
@@ -116,7 +102,7 @@ class UpToHongshulinTableViewDataSource:NSObject, UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch self.directionNow {
+        switch self.viewModel.directionNow {
         case .up:
             
             switch section {
@@ -141,24 +127,15 @@ class UpToHongshulinTableViewDataSource:NSObject, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {DanhaiLRTRouteManager.witchLRTLine.allCases.count/2}
     
-}
-class UpToHongshulinTableViewDataDelegate:NSObject, UITableViewDelegate{
-    var directionNow:DirectionNow
-    let viewModel:MainViewModel
-
-    init(directionNow: DirectionNow, viewModel:MainViewModel) {
-        self.directionNow = directionNow
-        self.viewModel = viewModel
-        
-    }
+  
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if  viewModel.openDebugSetting {
             return DebugModeTableViewCell.heigh
         }else{
             return 50
         }
-//        return 50
-
+        //        return 50
+        
         
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -168,7 +145,7 @@ class UpToHongshulinTableViewDataDelegate:NSObject, UITableViewDelegate{
         //        let view = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 300, height: 100)))
         //        view.backgroundColor = .blue
         //        return view
-        switch self.directionNow {
+        switch self.viewModel.directionNow {
         case .up:
             switch section {
             case 0:
@@ -201,7 +178,6 @@ class UpToHongshulinTableViewDataDelegate:NSObject, UITableViewDelegate{
         headerView.titleLabel.text = "ggggg"
         return headerView
     }
-    
 }
 class CustomSectionHeaderView: UITableViewHeaderFooterView {
     
