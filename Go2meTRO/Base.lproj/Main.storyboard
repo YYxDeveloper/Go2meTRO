@@ -70,18 +70,31 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="UP||DOWN"/>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXW-h8-c7E">
+                                <rect key="frame" x="100" y="0.0" width="60" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="KTP-s7-UpK"/>
+                                    <constraint firstAttribute="width" constant="60" id="kSV-tp-cSB"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="ladybug" catalog="system"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ro7-Rs-avJ"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
+                            <constraint firstItem="kXW-h8-c7E" firstAttribute="leading" secondItem="9SW-Ir-MNt" secondAttribute="leading" constant="100" id="1Lr-DL-hc8"/>
                             <constraint firstItem="ro7-Rs-avJ" firstAttribute="bottom" secondItem="iHt-k5-O64" secondAttribute="bottom" constant="50" id="CPc-Vk-gMG"/>
                             <constraint firstItem="iHt-k5-O64" firstAttribute="leading" secondItem="ro7-Rs-avJ" secondAttribute="leading" id="MC3-dM-r5r"/>
+                            <constraint firstItem="kXW-h8-c7E" firstAttribute="top" secondItem="9SW-Ir-MNt" secondAttribute="top" id="Snt-VI-tAm"/>
                             <constraint firstItem="iHt-k5-O64" firstAttribute="top" secondItem="ro7-Rs-avJ" secondAttribute="top" constant="50" id="b7O-3s-Ho5"/>
                             <constraint firstItem="ro7-Rs-avJ" firstAttribute="trailing" secondItem="iHt-k5-O64" secondAttribute="trailing" id="itZ-3o-7nO"/>
                             <constraint firstItem="ro7-Rs-avJ" firstAttribute="trailing" secondItem="iHt-k5-O64" secondAttribute="trailing" id="kxi-WU-7MY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="debugModeBtn" destination="kXW-h8-c7E" id="dyZ-9J-XTd"/>
                         <outlet property="upDownBtn" destination="Xzd-1G-XyE" id="PhI-mV-mpB"/>
                         <outlet property="upToHongshulinTableView" destination="iHt-k5-O64" id="Wu2-BS-JO0"/>
                     </connections>
@@ -92,6 +105,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ladybug" catalog="system" width="128" height="122"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

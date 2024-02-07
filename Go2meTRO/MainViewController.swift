@@ -11,6 +11,7 @@ import RxDataSources
 import RxCocoa
 class MainViewController: UIViewController {
     let disposeBag = DisposeBag()
+    @IBOutlet weak var debugModeBtn: UIButton!
     @IBOutlet weak var upDownBtn: UIButton!
     @IBOutlet weak var upToHongshulinTableView: UITableView!
     
