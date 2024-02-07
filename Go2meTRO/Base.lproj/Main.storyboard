@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="109" width="393" height="659"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UpToHongshulinTableViewCell" id="yrI-9V-Xg6" customClass="UpToHongshulinTableViewCell" customModule="Go2meTRO" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DebugModeTableViewCell" id="yrI-9V-Xg6" customClass="DebugModeTableViewCell" customModule="Go2meTRO" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="52.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yrI-9V-Xg6" id="aiL-rL-nTC">

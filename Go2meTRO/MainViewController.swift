@@ -9,16 +9,26 @@ import UIKit
 import RxSwift
 import RxDataSources
 import RxCocoa
+class MainViewModel {
+    static  var isDebugMode:Bool{
+        #if DEBUG
+            return true
+        #else
+            return false
+        #endif
+    }
+    var openDebugSetting:Bool = false
+}
 class MainViewController: UIViewController {
     let disposeBag = DisposeBag()
     @IBOutlet weak var debugModeBtn: UIButton!
     @IBOutlet weak var upDownBtn: UIButton!
     @IBOutlet weak var upToHongshulinTableView: UITableView!
-    
-    
+    let viewModel = MainViewModel()
     var directionNow = DirectionNow.up
-    lazy var upToHongshulinTableViewDataDelegate = UpToHongshulinTableViewDataDelegate(directionNow: self.directionNow)
-    lazy var upToHongshulinTableViewDataSource = UpToHongshulinTableViewDataSource(directionNow: self.directionNow)
+   
+    lazy var upToHongshulinTableViewDataDelegate = UpToHongshulinTableViewDataDelegate(directionNow: self.directionNow, viewModel: self.viewModel)
+    lazy var upToHongshulinTableViewDataSource = UpToHongshulinTableViewDataSource(directionNow: self.directionNow, viewModel: self.viewModel)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,20 +39,28 @@ class MainViewController: UIViewController {
         upToHongshulinTableView.delegate = upToHongshulinTableViewDataDelegate
         upToHongshulinTableView.dataSource = upToHongshulinTableViewDataSource
         upToHongshulinTableView.register(CustomSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: "CustomSectionHeaderView")
+        debugModeBtn.isHidden = !MainViewModel.isDebugMode
+
         
         DanhaiLRTRequestManager.shared.upToHongshulinSubject.asDriver(onErrorJustReturn: emptyEachStatinInfo).filter{
-                return !$0.stations.isEmpty
+            return !$0.stations.isEmpty
         }.drive(onNext: {eachStationInfo in
-//                print("xxxxx\(eachStationInfo)")
+            //                print("xxxxx\(eachStationInfo)")
+            self.upToHongshulinTableView.reloadData()
+        }).disposed(by: self.disposeBag)
+        
+        
+        debugModeBtn.rx.tap
+            .subscribe(onNext: {[unowned self]  in
+                self.viewModel.openDebugSetting = !viewModel.openDebugSetting
+                print("cccc::\( self.viewModel.openDebugSetting)")
+
                 self.upToHongshulinTableView.reloadData()
+                
             }).disposed(by: self.disposeBag)
-        
-        
-        
         upDownBtn.rx.tap
             .subscribe(onNext: {[unowned self]  in
                 self.directionNow = self.directionNow == .up ? .down : .up
-                print("cccc::\(self.directionNow)")
                 
             }).disposed(by: self.disposeBag)
         
@@ -54,13 +72,16 @@ class MainViewController: UIViewController {
 }
 class UpToHongshulinTableViewDataSource:NSObject, UITableViewDataSource{
     var directionNow:DirectionNow
-    
-    init(directionNow: DirectionNow) {
-        self.directionNow = directionNow
-    }
+    let viewModel:MainViewModel
 
+    init(directionNow: DirectionNow, viewModel:MainViewModel) {
+        self.directionNow = directionNow
+        self.viewModel = viewModel
+        
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UpToHongshulinTableViewCell", for: indexPath) as! UpToHongshulinTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DebugModeTableViewCell", for: indexPath) as! DebugModeTableViewCell
         cell.contentView.backgroundColor = .red
         
         switch self.directionNow {
@@ -70,10 +91,10 @@ class UpToHongshulinTableViewDataSource:NSObject, UITableViewDataSource{
             
             if info.GpsDatas.count == 1 {
                 cell.tt.text = info.GpsDatas[0].carNum
-
+                
             }else{
                 cell.tt.text = info.GpsDatas[indexPath.row].carNum
-
+                
             }
             break
         case .down:
@@ -103,31 +124,42 @@ class UpToHongshulinTableViewDataSource:NSObject, UITableViewDataSource{
                 return DanhaiLRTRouteManager.upToHongshulinStationKey.allCases.count
             case DanhaiLRTRouteManager.witchLRTLine.upToKanding.rawValue:
                 return DanhaiLRTRouteManager.upToKandingStationKey.allCases.count
-
+                
             default:
                 return 0
-
+                
             }
             
             
             let info =  DanhaiLRTRequestManager.shared.upToHongshulinSubject.forceGetValue()
             
-//            return info.GpsDatas.count == 1 ?
+            //            return info.GpsDatas.count == 1 ?
         case .down:
             return 8
         }
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {DanhaiLRTRouteManager.witchLRTLine.allCases.count/2}
     
 }
 class UpToHongshulinTableViewDataDelegate:NSObject, UITableViewDelegate{
     var directionNow:DirectionNow
-    
-    init(directionNow: DirectionNow) {
+    let viewModel:MainViewModel
+
+    init(directionNow: DirectionNow, viewModel:MainViewModel) {
         self.directionNow = directionNow
+        self.viewModel = viewModel
+        
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if  viewModel.openDebugSetting {
+            return DebugModeTableViewCell.heigh
+        }else{
+            return 50
+        }
+//        return 50
+
+        
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 100
@@ -164,7 +196,7 @@ class UpToHongshulinTableViewDataDelegate:NSObject, UITableViewDelegate{
                 assertionFailure()
             }
         }
-       
+        
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CustomSectionHeaderView") as! CustomSectionHeaderView
         headerView.titleLabel.text = "ggggg"
         return headerView

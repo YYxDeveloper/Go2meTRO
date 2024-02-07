@@ -7,8 +7,8 @@
 
 import UIKit
 
-class UpToHongshulinTableViewCell: UITableViewCell {
-
+class DebugModeTableViewCell: UITableViewCell {
+    static let heigh:CGFloat = 100
     @IBOutlet weak var tt: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
