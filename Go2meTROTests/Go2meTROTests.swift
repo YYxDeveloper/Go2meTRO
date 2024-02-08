@@ -41,7 +41,7 @@ final class Go2meTROTests: XCTestCase {
                 let decoder = JSONDecoder()
                 
                 let model = try decoder.decode(V2CurrentTimeModel.self, from: jsonData)
-//                assert(model.data!.gpsData.count > 0)
+                assert(model.data!.gpsData.count > 0)
             } catch {
                 print("Error reading file: \(error.localizedDescription)")
                 assertionFailure()
@@ -57,9 +57,10 @@ final class Go2meTROTests: XCTestCase {
     }
     func testDownToWahrfSubject()  {
         let expectation = XCTestExpectation(description: "Closure should be called")
-
-        DanhaiLRTRequestManager.shared.downToToKandingSubject.subscribe(onNext: {eachStationInfo in
-            assert(eachStationInfo.GpsDatas.count == 2)
+        DanhaiLRTRequestManager.shared.downToToKandingSubject.subscribe(onNext: {infos in
+            let result = StationInfos.isVacant(infos: infos)
+                assert(result)
+            
             expectation.fulfill()
 
         }).disposed(by: self.disposeBag)

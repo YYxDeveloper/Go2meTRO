@@ -16,24 +16,6 @@ enum DirectionNow {
 enum GeneralError:Error {
     case optionalError,mappingError
 }
-//typealias eachStationInfo = (stations:[String],GpsDatas:[GpsData])
-struct StationInfos {
-    let stations:[String]
-    let gpsDatas:[GpsData]
-    static var emptyEachStatinInfo:StationInfos{
-        let defaultModel = V2CurrentTimeModel.createDefaultModel()
-        let defGpsData:GpsData = (defaultModel.data?.gpsData[0][V2CurrentTimeModel.defaultModelKey])!
-        let only1Value = [defGpsData]
-        let only1key:[String] = [V2CurrentTimeModel.defaultModelKey]
-        return StationInfos(stations: only1key, gpsDatas: only1Value)
-    }
-    static func checkEachStationInfo(infos:StationInfos) -> Bool {
-        return infos.stations[0] == V2CurrentTimeModel.defaultModelKey
-    }
-    
-}
-
-
 enum LRT_URLs:String {
     //未來要從後端取
     case ntmetroHome,apiFailInstead = "https://trainsmonitor.ntmetro.com.tw/"
@@ -189,12 +171,18 @@ class DanhaiLRTRequestManager{
 
     
 }
-extension BehaviorSubject{
-    func forceGetValue() -> Element{
-        do {
-            return try self.value()
-        } catch  {
-            return StationInfos.emptyEachStatinInfo as! Element
-        }
+struct StationInfos {
+    let stations:[String]
+    let gpsDatas:[GpsData]
+    static var emptyEachStatinInfo:StationInfos{
+        let defaultModel = V2CurrentTimeModel.createDefaultModel()
+        let defGpsData:GpsData = (defaultModel.data?.gpsData[0][V2CurrentTimeModel.defaultModelKey])!
+        let only1Value = [defGpsData]
+        let only1key:[String] = [V2CurrentTimeModel.defaultModelKey]
+        return StationInfos(stations: only1key, gpsDatas: only1Value)
     }
+    static func isVacant(infos:StationInfos) -> Bool {
+        return infos.stations[0] == V2CurrentTimeModel.defaultModelKey
+    }
+    
 }

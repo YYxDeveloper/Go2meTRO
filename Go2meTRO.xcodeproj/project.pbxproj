@@ -35,6 +35,9 @@
 		D2C92EA92B6E892800DB2D8D /* DebugModeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C92EA82B6E892800DB2D8D /* DebugModeTableViewCell.swift */; };
 		D2C92EAA2B6E892800DB2D8D /* DebugModeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C92EA82B6E892800DB2D8D /* DebugModeTableViewCell.swift */; };
 		D2C92EAB2B6E892800DB2D8D /* DebugModeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C92EA82B6E892800DB2D8D /* DebugModeTableViewCell.swift */; };
+		D2D05CCB2B74B17800FC1774 /* Rx+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D05CCA2B74B17800FC1774 /* Rx+extension.swift */; };
+		D2D05CCC2B74B2E100FC1774 /* Rx+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D05CCA2B74B17800FC1774 /* Rx+extension.swift */; };
+		D2D05CCD2B74B2E200FC1774 /* Rx+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D05CCA2B74B17800FC1774 /* Rx+extension.swift */; };
 		D2DC6BAC2B71387B00689296 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2DC6BB02B71387B00689296 /* Localizable.strings */; };
 		D2DC6BAD2B71387B00689296 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2DC6BB02B71387B00689296 /* Localizable.strings */; };
 		D2DC6BAE2B71387B00689296 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2DC6BB02B71387B00689296 /* Localizable.strings */; };
@@ -95,6 +98,7 @@
 		D2B2B8D42B565FC200BBE63F /* Go2meTROUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Go2meTROUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D2C2B0A62B591A7500AAE90A /* V2DefaultModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = V2DefaultModel.json; sourceTree = "<group>"; };
 		D2C92EA82B6E892800DB2D8D /* DebugModeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugModeTableViewCell.swift; sourceTree = "<group>"; };
+		D2D05CCA2B74B17800FC1774 /* Rx+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+extension.swift"; sourceTree = "<group>"; };
 		D2DC6BA22B7135F300689296 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		D2DC6BA32B7135F300689296 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		D2DC6BA52B71362F00689296 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				D2300FC62B73483800EEFB21 /* String+extension.swift */,
+				D2D05CCA2B74B17800FC1774 /* Rx+extension.swift */,
 			);
 			path = GeneralExtension;
 			sourceTree = "<group>";
@@ -496,6 +501,7 @@
 				D2B2B8B82B565FC100BBE63F /* Go2meTRO.xcdatamodeld in Sources */,
 				D2976C802B57C351009F6149 /* DanhaiLRTRequestManager.swift in Sources */,
 				D2B2B8B22B565FC100BBE63F /* ViewController.swift in Sources */,
+				D2D05CCB2B74B17800FC1774 /* Rx+extension.swift in Sources */,
 				D2DDE01D2B5680B800ECF8C8 /* V2Model.swift in Sources */,
 				D2B2B8AE2B565FC100BBE63F /* AppDelegate.swift in Sources */,
 				D2300FC72B73483800EEFB21 /* String+extension.swift in Sources */,
@@ -516,6 +522,7 @@
 				D2C92EAA2B6E892800DB2D8D /* DebugModeTableViewCell.swift in Sources */,
 				D2300FC82B734EA300EEFB21 /* String+extension.swift in Sources */,
 				D28C7CD52B58F5B100FB9EB7 /* MainViewController.swift in Sources */,
+				D2D05CCC2B74B2E100FC1774 /* Rx+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +532,7 @@
 			files = (
 				D2300FC92B734EA300EEFB21 /* String+extension.swift in Sources */,
 				D2B2B8D52B565FC200BBE63F /* Go2meTROUITestsLaunchTests.swift in Sources */,
+				D2D05CCD2B74B2E200FC1774 /* Rx+extension.swift in Sources */,
 				D2976C822B57C351009F6149 /* DanhaiLRTRequestManager.swift in Sources */,
 				D2DDE01F2B5680B800ECF8C8 /* V2Model.swift in Sources */,
 				D2B2B8D32B565FC200BBE63F /* Go2meTROUITests.swift in Sources */,

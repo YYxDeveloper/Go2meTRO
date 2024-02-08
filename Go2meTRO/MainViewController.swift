@@ -77,7 +77,7 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
                 
 
             
-            if StationInfos.checkEachStationInfo(infos: info) {
+            if StationInfos.isVacant(infos: info) {
                 cell.tt.text = info.gpsDatas[0].carNum
                 
             }else{
