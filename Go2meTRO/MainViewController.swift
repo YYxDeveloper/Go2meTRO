@@ -77,7 +77,7 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
                 
 
             
-            if info.stations[0] == V2CurrentTimeModel.defaultModelKey {
+            if checkEachStationInfo(source: info) {
                 cell.tt.text = info.GpsDatas[0].carNum
                 
             }else{

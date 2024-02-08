@@ -24,6 +24,9 @@ var emptyEachStatinInfo:eachStationInfo{
     let only1key:[String] = [V2CurrentTimeModel.defaultModelKey]
     return (only1key,only1Value)
 }
+func checkEachStationInfo(source:eachStationInfo) -> Bool {
+    return source.stations[0] == V2CurrentTimeModel.defaultModelKey
+}
 enum LRT_URLs:String {
     //未來要從後端取
     case ntmetroHome,apiFailInstead = "https://trainsmonitor.ntmetro.com.tw/"
