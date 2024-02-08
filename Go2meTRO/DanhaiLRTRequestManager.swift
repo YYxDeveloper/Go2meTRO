@@ -16,17 +16,24 @@ enum DirectionNow {
 enum GeneralError:Error {
     case optionalError,mappingError
 }
-typealias eachStationInfo = (stations:[String],GpsDatas:[GpsData])
-var emptyEachStatinInfo:eachStationInfo{
-    let defaultModel = V2CurrentTimeModel.createDefaultModel()
-    let defGpsData:GpsData = (defaultModel.data?.gpsData[0][V2CurrentTimeModel.defaultModelKey])!
-    let only1Value = [defGpsData]
-    let only1key:[String] = [V2CurrentTimeModel.defaultModelKey]
-    return (only1key,only1Value)
+//typealias eachStationInfo = (stations:[String],GpsDatas:[GpsData])
+struct StationInfos {
+    let stations:[String]
+    let gpsDatas:[GpsData]
+    static var emptyEachStatinInfo:StationInfos{
+        let defaultModel = V2CurrentTimeModel.createDefaultModel()
+        let defGpsData:GpsData = (defaultModel.data?.gpsData[0][V2CurrentTimeModel.defaultModelKey])!
+        let only1Value = [defGpsData]
+        let only1key:[String] = [V2CurrentTimeModel.defaultModelKey]
+        return StationInfos(stations: only1key, gpsDatas: only1Value)
+    }
+    static func checkEachStationInfo(infos:StationInfos) -> Bool {
+        return infos.stations[0] == V2CurrentTimeModel.defaultModelKey
+    }
+    
 }
-func checkEachStationInfo(source:eachStationInfo) -> Bool {
-    return source.stations[0] == V2CurrentTimeModel.defaultModelKey
-}
+
+
 enum LRT_URLs:String {
     //未來要從後端取
     case ntmetroHome,apiFailInstead = "https://trainsmonitor.ntmetro.com.tw/"
@@ -136,16 +143,16 @@ class DanhaiLRTRequestManager{
     }()
     
     var errorSubject = PublishSubject<Error>()
-    let upToHongshulinSubject = BehaviorSubject<eachStationInfo>.init(value: (emptyEachStatinInfo))
-    let upToKandingSubject = BehaviorSubject<eachStationInfo>.init(value: (emptyEachStatinInfo))
-    let upToWahrfSubject = BehaviorSubject<eachStationInfo>.init(value: (emptyEachStatinInfo))
-    let downToToKandingSubject = BehaviorSubject<eachStationInfo>.init(value: (emptyEachStatinInfo))
-    let downToWahrfSubject = BehaviorSubject<eachStationInfo>.init(value: (emptyEachStatinInfo))
-    let downToHongshulinSubject = BehaviorSubject<eachStationInfo>.init(value: (emptyEachStatinInfo))
+    let upToHongshulinSubject = BehaviorSubject<StationInfos>.init(value: (StationInfos.emptyEachStatinInfo))
+    let upToKandingSubject = BehaviorSubject<StationInfos>.init(value: (StationInfos.emptyEachStatinInfo))
+    let upToWahrfSubject = BehaviorSubject<StationInfos>.init(value: (StationInfos.emptyEachStatinInfo))
+    let downToToKandingSubject = BehaviorSubject<StationInfos>.init(value: (StationInfos.emptyEachStatinInfo))
+    let downToWahrfSubject = BehaviorSubject<StationInfos>.init(value: (StationInfos.emptyEachStatinInfo))
+    let downToHongshulinSubject = BehaviorSubject<StationInfos>.init(value: (StationInfos.emptyEachStatinInfo))
     private let disposeBag = DisposeBag()
     
 
-    func sortGpsData<T: RawRepresentable & CaseIterable>(stationKey enumType: T.Type, inputGpsData: [String: GpsData]) -> eachStationInfo where T.RawValue == String {
+    func sortGpsData<T: RawRepresentable & CaseIterable>(stationKey enumType: T.Type, inputGpsData: [String: GpsData]) -> StationInfos where T.RawValue == String {
 
         var datas = [GpsData]()
         var keys = [String]()
@@ -159,7 +166,7 @@ class DanhaiLRTRequestManager{
             }
         }
         
-        return (keys,datas)
+        return StationInfos(stations: keys, gpsDatas: datas)
 
 
     }
@@ -187,7 +194,7 @@ extension BehaviorSubject{
         do {
             return try self.value()
         } catch  {
-            return emptyEachStatinInfo as! Element
+            return StationInfos.emptyEachStatinInfo as! Element
         }
     }
 }

@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
         debugModeBtn.isHidden = !MainViewModel.isDebugMode
 
         
-        DanhaiLRTRequestManager.shared.upToHongshulinSubject.asDriver(onErrorJustReturn: emptyEachStatinInfo).filter{
+        DanhaiLRTRequestManager.shared.upToHongshulinSubject.asDriver(onErrorJustReturn: StationInfos.emptyEachStatinInfo).filter{
             return !$0.stations.isEmpty
         }.drive(onNext: {eachStationInfo in
             //                print("xxxxx\(eachStationInfo)")
@@ -73,15 +73,15 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
         switch self.viewModel.directionNow {
         case .up:
             
-            let info:eachStationInfo =  DanhaiLRTRequestManager.shared.upToHongshulinSubject.forceGetValue()
+            let info:StationInfos =  DanhaiLRTRequestManager.shared.upToHongshulinSubject.forceGetValue()
                 
 
             
-            if checkEachStationInfo(source: info) {
-                cell.tt.text = info.GpsDatas[0].carNum
+            if StationInfos.checkEachStationInfo(infos: info) {
+                cell.tt.text = info.gpsDatas[0].carNum
                 
             }else{
-                cell.tt.text = info.GpsDatas[indexPath.row].carNum
+                cell.tt.text = info.gpsDatas[indexPath.row].time.asString()
                 
             }
             break
