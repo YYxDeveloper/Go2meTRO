@@ -73,9 +73,11 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
         switch self.viewModel.directionNow {
         case .up:
             
-            let info =  DanhaiLRTRequestManager.shared.upToHongshulinSubject.forceGetValue()
+            let info:eachStationInfo =  DanhaiLRTRequestManager.shared.upToHongshulinSubject.forceGetValue()
+                
+
             
-            if info.GpsDatas.count == 1 {
+            if info.stations[0] == V2CurrentTimeModel.defaultModelKey {
                 cell.tt.text = info.GpsDatas[0].carNum
                 
             }else{
