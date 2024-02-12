@@ -6,3 +6,15 @@
 //
 
 import Foundation
+class MainViewModel {
+    static  var isDebugMode:Bool{
+#if DEBUG
+        return true
+#else
+        return false
+#endif
+    }
+    var openDebugSetting:Bool = false
+    var directionNow = DirectionNow.up
+    
+}

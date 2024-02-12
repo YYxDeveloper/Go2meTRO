@@ -9,24 +9,14 @@ import UIKit
 import RxSwift
 import RxDataSources
 import RxCocoa
-class MainViewModel {
-    static  var isDebugMode:Bool{
-        #if DEBUG
-            return true
-        #else
-            return false
-        #endif
-    }
-    var openDebugSetting:Bool = false
-    var directionNow = DirectionNow.up
 
-}
 class MainViewController: UIViewController {
     let disposeBag = DisposeBag()
     @IBOutlet weak var debugModeBtn: UIButton!
     @IBOutlet weak var upDownBtn: UIButton!
     @IBOutlet weak var upToHongshulinTableView: UITableView!
     let viewModel = MainViewModel()
+    let viewDebugModel = MainViewDebugModel()
    
   
 
@@ -48,8 +38,8 @@ class MainViewController: UIViewController {
         
         debugModeBtn.rx.tap
             .subscribe(onNext: {[unowned self]  in
-                self.viewModel.openDebugSetting = !viewModel.openDebugSetting
-                print("cccc::\( self.viewModel.openDebugSetting)")
+                self.viewDebugModel.openDebugSetting = !viewDebugModel.openDebugSetting
+                print("cccc::\( self.viewDebugModel.openDebugSetting)")
 
                 self.upToHongshulinTableView.reloadData()
                 
@@ -76,7 +66,8 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
             
             let info:StationInfos =  DanhaiLRTRequestManager.shared.upToHongshulinSubject.forceGetValue()
                 
-            if viewModel.openDebugSetting{
+            if viewDebugModel.openDebugSetting{
+                let cell = viewDebugModel.giveMeDebugModeTableViewCell(tableView: tableView, indexPath: indexPath)
                 cell.contentView.backgroundColor = indexPath.row%2 == 0 ? .cyan : .green
                 let divid = ">>>"
                 cell.carNum.text = V2CurrentTimeModel.thisModelKeys.carNum.rawValue + divid + (info.gpsDatas[0].carNum ?? String.giveLoadingString())
@@ -140,7 +131,7 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
     
   
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if  viewModel.openDebugSetting {
+        if  viewDebugModel.openDebugSetting {
             return DebugModeTableViewCell.heigh
         }else{
             return 50
