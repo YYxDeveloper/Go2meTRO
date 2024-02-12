@@ -10,4 +10,10 @@ extension Numeric{
     func asString() -> String {
         return String(describing: self)
     }
+  
+}
+extension String{
+    static func giveLoadingString() -> String {
+        return NSLocalizedString("loading", comment: "loading")
+    }
 }

@@ -9,7 +9,14 @@ import UIKit
 
 class DebugModeTableViewCell: UITableViewCell {
     static let heigh:CGFloat = 100
-    @IBOutlet weak var tt: UILabel!
+    @IBOutlet weak var drivingTime: UILabel!
+    @IBOutlet weak var carNum: UILabel!
+    @IBOutlet weak var timeRouteId: UILabel!
+    @IBOutlet weak var routeId: UILabel!
+    @IBOutlet weak var t1: UILabel!
+    @IBOutlet weak var t3: UILabel!
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

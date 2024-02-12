@@ -6,7 +6,7 @@
         "gpsData": [
             {
                 "V2DefaultModel": {
-                    "carNum": "加載中...",
+                    "carNum": "loading",
                     "drivingTime": "16:12",
                     "routeId": 3,
                     "time": 0,

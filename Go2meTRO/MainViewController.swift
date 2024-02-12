@@ -32,7 +32,8 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        DanhaiLRTRequestManager.shared.run()
+
         upToHongshulinTableView.register(CustomSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: "CustomSectionHeaderView")
         debugModeBtn.isHidden = !MainViewModel.isDebugMode
 
@@ -75,13 +76,21 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
             
             let info:StationInfos =  DanhaiLRTRequestManager.shared.upToHongshulinSubject.forceGetValue()
                 
+            if viewModel.openDebugSetting{
+                cell.contentView.backgroundColor = indexPath.row%2 == 0 ? .cyan : .green
+                let divid = ">>>"
+                cell.carNum.text = V2CurrentTimeModel.thisModelKeys.carNum.rawValue + divid + (info.gpsDatas[0].carNum ?? String.giveLoadingString())
+                cell.drivingTime.text = V2CurrentTimeModel.thisModelKeys.driving.rawValue + divid + info.gpsDatas[0].drivingTime
+                cell.routeId.text = V2CurrentTimeModel.thisModelKeys.routeId.rawValue + divid + (info.gpsDatas[0].routeId?.asString() ?? String.giveLoadingString())
+                cell.timeRouteId.text = V2CurrentTimeModel.thisModelKeys.tRouteId.rawValue + divid + (info.gpsDatas[0].timeRouteId?.asString() ?? String.giveLoadingString())
+                cell.t1.text = V2CurrentTimeModel.thisModelKeys.t1.rawValue + divid + (info.gpsDatas[0].time.asString())
+                cell.t3.text = V2CurrentTimeModel.thisModelKeys.t3.rawValue + divid + (info.gpsDatas[0].time3.asString())
+                
+            }else if StationInfos.isVacant(infos: info) {
+             
 
-            
-            if StationInfos.isVacant(infos: info) {
-                cell.tt.text = info.gpsDatas[0].carNum
                 
             }else{
-                cell.tt.text = info.gpsDatas[indexPath.row].time.asString()
                 
             }
             break

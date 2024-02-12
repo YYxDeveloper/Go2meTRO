@@ -53,6 +53,9 @@ struct DisplaySettings: Codable {
     let activeTimeUnit: Int
 }
 extension V2CurrentTimeModel {
+    enum thisModelKeys:String{
+        case driving, carNum, tRouteId, routeId, t1, t3
+    }
     static let defaultModelKey = "V2DefaultModel"
     static func createDefaultModel() -> V2CurrentTimeModel {
         let filePath = Bundle.main.path(forResource: "V2DefaultModel", ofType: "json")!
