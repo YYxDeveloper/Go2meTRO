@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import UIKit
+class MainViewDebugModel: MainViewModel {
+    func giveMeDebugModeTableViewCell(tableView:UITableView,indexPath:IndexPath)-> DebugModeTableViewCell{
+        return tableView.dequeueReusableCell(withIdentifier: "DebugModeTableViewCell", for: indexPath) as! DebugModeTableViewCell
+    }
+}

@@ -27,5 +27,14 @@ class DebugModeTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    func modifyLabelsSetting(info:StationInfos, row:Int) {
+        let divid = ">>>"
+        self.carNum.text = V2CurrentTimeModel.thisModelKeys.carNum.rawValue + divid + (info.gpsDatas[row].carNum ?? String.giveLoadingString())
+        self.drivingTime.text = V2CurrentTimeModel.thisModelKeys.driving.rawValue + divid + info.gpsDatas[row].drivingTime
+        self.routeId.text = V2CurrentTimeModel.thisModelKeys.routeId.rawValue + divid + (info.gpsDatas[row].routeId?.asString() ?? String.giveLoadingString())
+        self.timeRouteId.text = V2CurrentTimeModel.thisModelKeys.tRouteId.rawValue + divid + (info.gpsDatas[row].timeRouteId?.asString() ?? String.giveLoadingString())
+        self.t1.text = V2CurrentTimeModel.thisModelKeys.t1.rawValue + divid + (info.gpsDatas[row].time.asString())
+        self.t3.text = V2CurrentTimeModel.thisModelKeys.t3.rawValue + divid + (info.gpsDatas[row].time3.asString())
+    }
 
 }
