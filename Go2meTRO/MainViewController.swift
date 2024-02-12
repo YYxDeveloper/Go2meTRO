@@ -23,7 +23,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         DanhaiLRTRequestManager.shared.run()
-
         upToHongshulinTableView.register(CustomSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: "CustomSectionHeaderView")
         debugModeBtn.isHidden = !MainViewModel.isDebugMode
 

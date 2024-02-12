@@ -97,6 +97,22 @@ class DanhaiLRTRouteManager{
         
         
     }
+    func getStaticStationInfos() -> [StaticStationInfos]? {
+        guard let filePath = Bundle.main.path(forResource: "StationStaticInfo", ofType: "json") else {
+            print("Error: JSON file not found.")
+            return nil
+        }
+        
+        do {
+            let json = try String(contentsOfFile: filePath, encoding: .utf8)
+            let stations = try JSONDecoder().decode([StaticStationInfos].self, from: Data(json.utf8))
+            return stations
+        } catch {
+            assertionFailure(error.localizedDescription)
+            return nil
+        }
+    }
+
 }
 
 class DanhaiLRTRequestManager{
@@ -133,7 +149,9 @@ class DanhaiLRTRequestManager{
     let downToHongshulinSubject = BehaviorSubject<StationInfos>.init(value: (StationInfos.emptyEachStatinInfo))
     private let disposeBag = DisposeBag()
     
-
+    func getStaticStationInfos() -> [StaticStationInfos]? {
+        return self.routeManager.getStaticStationInfos()
+    }
     func sortGpsData<T: RawRepresentable & CaseIterable>(stationKey enumType: T.Type, inputGpsData: [String: GpsData]) -> StationInfos where T.RawValue == String {
 
         var datas = [GpsData]()
@@ -185,4 +203,9 @@ struct StationInfos {
         return infos.stations[0] == V2CurrentTimeModel.defaultModelKey
     }
     
+}
+struct StaticStationInfos: Codable {
+    var id: String
+    var localizationKey: String
+    var terminal: String?
 }

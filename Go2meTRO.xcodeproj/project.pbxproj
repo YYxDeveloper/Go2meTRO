@@ -15,6 +15,9 @@
 		D23CA82A2B79F113007C9C4A /* MainViewDebugModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23CA8292B79F113007C9C4A /* MainViewDebugModel.swift */; };
 		D23CA82B2B79F117007C9C4A /* MainViewDebugModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23CA8292B79F113007C9C4A /* MainViewDebugModel.swift */; };
 		D23CA82C2B79F118007C9C4A /* MainViewDebugModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23CA8292B79F113007C9C4A /* MainViewDebugModel.swift */; };
+		D23CA82E2B7A36EC007C9C4A /* StationStaticInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = D23CA82D2B7A36EC007C9C4A /* StationStaticInfo.json */; };
+		D23CA82F2B7A36EC007C9C4A /* StationStaticInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = D23CA82D2B7A36EC007C9C4A /* StationStaticInfo.json */; };
+		D23CA8302B7A36EC007C9C4A /* StationStaticInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = D23CA82D2B7A36EC007C9C4A /* StationStaticInfo.json */; };
 		D24F0FD02B6CE6AE00D32CA3 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F0FCF2B6CE6AE00D32CA3 /* MainViewModel.swift */; };
 		D24F0FD12B6CE6AE00D32CA3 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F0FCF2B6CE6AE00D32CA3 /* MainViewModel.swift */; };
 		D24F0FD22B6CE6AE00D32CA3 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F0FCF2B6CE6AE00D32CA3 /* MainViewModel.swift */; };
@@ -82,6 +85,7 @@
 		8E5D5F47B280E411DEBD12B4 /* Pods_Go2meTRO_Go2meTROUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Go2meTRO_Go2meTROUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2300FC62B73483800EEFB21 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		D23CA8292B79F113007C9C4A /* MainViewDebugModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewDebugModel.swift; sourceTree = "<group>"; };
+		D23CA82D2B7A36EC007C9C4A /* StationStaticInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StationStaticInfo.json; sourceTree = "<group>"; };
 		D24F0FCF2B6CE6AE00D32CA3 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		D28C7CD32B58F5B100FB9EB7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D2976C7F2B57C351009F6149 /* DanhaiLRTRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanhaiLRTRequestManager.swift; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 				D23CA8292B79F113007C9C4A /* MainViewDebugModel.swift */,
 				D2C92EA82B6E892800DB2D8D /* DebugModeTableViewCell.swift */,
 				D2DDE0182B56805C00ECF8C8 /* V2Model.json */,
+				D23CA82D2B7A36EC007C9C4A /* StationStaticInfo.json */,
 				D2C2B0A62B591A7500AAE90A /* V2DefaultModel.json */,
 				D2DDE01C2B5680B800ECF8C8 /* V2Model.swift */,
 				D2B2B8B32B565FC100BBE63F /* Main.storyboard */,
@@ -348,6 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D23CA82E2B7A36EC007C9C4A /* StationStaticInfo.json in Resources */,
 				D2B2B8BD2B565FC200BBE63F /* LaunchScreen.storyboard in Resources */,
 				D2DC6BAC2B71387B00689296 /* Localizable.strings in Resources */,
 				D2DDE0192B56805C00ECF8C8 /* V2Model.json in Resources */,
@@ -363,6 +369,7 @@
 			files = (
 				D2DDE01A2B56805C00ECF8C8 /* V2Model.json in Resources */,
 				D2DC6BAD2B71387B00689296 /* Localizable.strings in Resources */,
+				D23CA82F2B7A36EC007C9C4A /* StationStaticInfo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +379,7 @@
 			files = (
 				D2DDE01B2B56805C00ECF8C8 /* V2Model.json in Resources */,
 				D2DC6BAE2B71387B00689296 /* Localizable.strings in Resources */,
+				D23CA8302B7A36EC007C9C4A /* StationStaticInfo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

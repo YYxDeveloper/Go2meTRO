@@ -1,0 +1,62 @@
+[
+    {
+        "id":"V01",
+        "localizationKey":"Hongshulin",
+        "terminal":"start"
+    } ,
+    {
+        "id":"V02",
+        "localizationKey":"Ganzhenlin",
+    } ,
+    {
+        "id":"V03",
+        "localizationKey":"Denjin Denggong",
+    } ,
+    {
+        "id":"V04",
+        "localizationKey":"Tamkang Univ.",
+    } ,
+    {
+        "id":"V05",
+        "localizationKey":"Danjin Beixin",
+    } ,
+    {
+        "id":"V06",
+        "localizationKey":"Xinshi 1st Rd.",
+    } ,
+    {
+        "id":"V07",
+        "localizationKey":"Tamsui District Office",
+    } ,
+    {
+        "id":"V08",
+        "localizationKey":"Binhai Yishan",
+    } ,
+    {
+        "id":"V09",
+        "localizationKey":"Binhai Shalun",
+    } ,
+    {
+        "id":"V10",
+        "localizationKey":"Danhai New Town",
+    } ,
+    {
+        "id":"V11",
+        "localizationKey":"Kanding",
+        "terminal":"end"
+    } ,
+    {
+        "id":"V28",
+        "localizationKey":"Taipei University of Marine Technology",
+    } ,
+    {
+        "id":"V27",
+        "localizationKey":"Shalun",
+    } ,
+    {
+        "id":"V26",
+        "localizationKey":"Tamsui Fisherman's Wharf",
+        "terminal":"end"
+        
+    } ,
+]
