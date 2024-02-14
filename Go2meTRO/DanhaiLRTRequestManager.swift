@@ -8,6 +8,7 @@
 import Foundation
 import RxAlamofire
 import RxSwift
+import UIKit
 
 enum DirectionNow {
     case up //上行
@@ -45,6 +46,11 @@ class DanhaiLRTRouteManager{
     enum witchLRTLine: Int, CaseIterable {
         case upToHongshulin, upToKanding, upToWahrf
         case downToToKanding, downToWahrf, downToHongshulin
+    }
+    enum witchLRTColor:UInt32{
+        case red = 0xEB6C5D
+        case blue = 0x017DA6
+        case green = 0x5B8F26
     }
     let errorSubject = PublishSubject<Error>()
     let currentTimeSubject = PublishSubject<V2CurrentTimeModel>()
