@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        upToHongshulinTableView.showsVerticalScrollIndicator = false
         DanhaiLRTRequestManager.shared.run()
         upToHongshulinTableView.register(CustomSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: "CustomSectionHeaderView")
         debugModeBtn.isHidden = !MainViewModel.isDebugMode
@@ -121,7 +122,9 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
         }
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {DanhaiLRTRouteManager.witchLRTLine.allCases.count/2}
+    func numberOfSections(in tableView: UITableView) -> Int {
+           return DanhaiLRTRouteManager.witchLRTLine.allCases.count/2
+    }
     
   
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -135,7 +138,7 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
         
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 100
+        return CustomSectionHeaderView.height
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         //        let view = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 300, height: 100)))
@@ -146,7 +149,6 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
             switch section {
             case 0:
                 let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CustomSectionHeaderView") as! CustomSectionHeaderView
-                headerView.titleLabel.text = "ggggg"
                 return headerView
             case 1:
                 break
@@ -171,48 +173,6 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
         }
         
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CustomSectionHeaderView") as! CustomSectionHeaderView
-        headerView.titleLabel.text = "ggggg"
         return headerView
-    }
-}
-class CustomSectionHeaderView: UITableViewHeaderFooterView {
-    
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
-    
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
-        setupUI()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupUI()
-    }
-    
-    private func setupUI() {
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(imageView)
-        
-        // Set up constraints
-        NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 40),
-            imageView.heightAnchor.constraint(equalToConstant: 40),
-            
-            titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 16),
-            titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
-        ])
     }
 }

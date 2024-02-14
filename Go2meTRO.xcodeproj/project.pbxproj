@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		6A677B6AAF3B8B02A4EA32FF /* Pods_Go2meTROTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C14109DD0D3754F7701ACBF /* Pods_Go2meTROTests.framework */; };
 		AB6C48DDB59A432DDF6FD776 /* Pods_Go2meTRO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035F592BA2066544CC5AE582 /* Pods_Go2meTRO.framework */; };
+		D22F3BC92B7D0B690044B7E4 /* Color+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22F3BC82B7D0B690044B7E4 /* Color+extension.swift */; };
+		D22F3BCA2B7D0B690044B7E4 /* Color+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22F3BC82B7D0B690044B7E4 /* Color+extension.swift */; };
+		D22F3BCB2B7D0B690044B7E4 /* Color+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22F3BC82B7D0B690044B7E4 /* Color+extension.swift */; };
+		D22F3BCD2B7D19180044B7E4 /* CustomSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22F3BCC2B7D19180044B7E4 /* CustomSectionHeaderView.swift */; };
+		D22F3BCE2B7D19180044B7E4 /* CustomSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22F3BCC2B7D19180044B7E4 /* CustomSectionHeaderView.swift */; };
+		D22F3BCF2B7D19180044B7E4 /* CustomSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22F3BCC2B7D19180044B7E4 /* CustomSectionHeaderView.swift */; };
 		D2300FC72B73483800EEFB21 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2300FC62B73483800EEFB21 /* String+extension.swift */; };
 		D2300FC82B734EA300EEFB21 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2300FC62B73483800EEFB21 /* String+extension.swift */; };
 		D2300FC92B734EA300EEFB21 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2300FC62B73483800EEFB21 /* String+extension.swift */; };
@@ -83,6 +89,8 @@
 		5AD490DE54A83350E031B78C /* Pods-Go2meTRO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go2meTRO.debug.xcconfig"; path = "Target Support Files/Pods-Go2meTRO/Pods-Go2meTRO.debug.xcconfig"; sourceTree = "<group>"; };
 		85F2052CC74A2D0D1DED78DE /* Pods-Go2meTRO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go2meTRO.release.xcconfig"; path = "Target Support Files/Pods-Go2meTRO/Pods-Go2meTRO.release.xcconfig"; sourceTree = "<group>"; };
 		8E5D5F47B280E411DEBD12B4 /* Pods_Go2meTRO_Go2meTROUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Go2meTRO_Go2meTROUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D22F3BC82B7D0B690044B7E4 /* Color+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+extension.swift"; sourceTree = "<group>"; };
+		D22F3BCC2B7D19180044B7E4 /* CustomSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSectionHeaderView.swift; sourceTree = "<group>"; };
 		D2300FC62B73483800EEFB21 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		D23CA8292B79F113007C9C4A /* MainViewDebugModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewDebugModel.swift; sourceTree = "<group>"; };
 		D23CA82D2B7A36EC007C9C4A /* StationStaticInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StationStaticInfo.json; sourceTree = "<group>"; };
@@ -170,6 +178,7 @@
 		D2300FC52B7345FA00EEFB21 /* GeneralExtension */ = {
 			isa = PBXGroup;
 			children = (
+				D22F3BC82B7D0B690044B7E4 /* Color+extension.swift */,
 				D2300FC62B73483800EEFB21 /* String+extension.swift */,
 				D2D05CCA2B74B17800FC1774 /* Rx+extension.swift */,
 			);
@@ -210,6 +219,7 @@
 				D24F0FCF2B6CE6AE00D32CA3 /* MainViewModel.swift */,
 				D23CA8292B79F113007C9C4A /* MainViewDebugModel.swift */,
 				D2C92EA82B6E892800DB2D8D /* DebugModeTableViewCell.swift */,
+				D22F3BCC2B7D19180044B7E4 /* CustomSectionHeaderView.swift */,
 				D2DDE0182B56805C00ECF8C8 /* V2Model.json */,
 				D23CA82D2B7A36EC007C9C4A /* StationStaticInfo.json */,
 				D2C2B0A62B591A7500AAE90A /* V2DefaultModel.json */,
@@ -511,6 +521,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D28C7CD42B58F5B100FB9EB7 /* MainViewController.swift in Sources */,
+				D22F3BC92B7D0B690044B7E4 /* Color+extension.swift in Sources */,
+				D22F3BCD2B7D19180044B7E4 /* CustomSectionHeaderView.swift in Sources */,
 				D2B2B8B82B565FC100BBE63F /* Go2meTRO.xcdatamodeld in Sources */,
 				D2976C802B57C351009F6149 /* DanhaiLRTRequestManager.swift in Sources */,
 				D2B2B8B22B565FC100BBE63F /* ViewController.swift in Sources */,
@@ -532,10 +544,12 @@
 				D24F0FD12B6CE6AE00D32CA3 /* MainViewModel.swift in Sources */,
 				D2B2B8C92B565FC200BBE63F /* Go2meTROTests.swift in Sources */,
 				D23CA82B2B79F117007C9C4A /* MainViewDebugModel.swift in Sources */,
+				D22F3BCE2B7D19180044B7E4 /* CustomSectionHeaderView.swift in Sources */,
 				D2976C812B57C351009F6149 /* DanhaiLRTRequestManager.swift in Sources */,
 				D2DDE01E2B5680B800ECF8C8 /* V2Model.swift in Sources */,
 				D2C92EAA2B6E892800DB2D8D /* DebugModeTableViewCell.swift in Sources */,
 				D2300FC82B734EA300EEFB21 /* String+extension.swift in Sources */,
+				D22F3BCA2B7D0B690044B7E4 /* Color+extension.swift in Sources */,
 				D28C7CD52B58F5B100FB9EB7 /* MainViewController.swift in Sources */,
 				D2D05CCC2B74B2E100FC1774 /* Rx+extension.swift in Sources */,
 			);
@@ -550,8 +564,10 @@
 				D2B2B8D52B565FC200BBE63F /* Go2meTROUITestsLaunchTests.swift in Sources */,
 				D2D05CCD2B74B2E200FC1774 /* Rx+extension.swift in Sources */,
 				D2976C822B57C351009F6149 /* DanhaiLRTRequestManager.swift in Sources */,
+				D22F3BCB2B7D0B690044B7E4 /* Color+extension.swift in Sources */,
 				D2DDE01F2B5680B800ECF8C8 /* V2Model.swift in Sources */,
 				D2B2B8D32B565FC200BBE63F /* Go2meTROUITests.swift in Sources */,
+				D22F3BCF2B7D19180044B7E4 /* CustomSectionHeaderView.swift in Sources */,
 				D28C7CD62B58F5B100FB9EB7 /* MainViewController.swift in Sources */,
 				D24F0FD22B6CE6AE00D32CA3 /* MainViewModel.swift in Sources */,
 				D2C92EAB2B6E892800DB2D8D /* DebugModeTableViewCell.swift in Sources */,
