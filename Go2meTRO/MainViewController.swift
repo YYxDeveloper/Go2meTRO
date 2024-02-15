@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var debugModeBtn: UIButton!
     @IBOutlet weak var upDownBtn: UIButton!
     @IBOutlet weak var upToHongshulinTableView: UITableView!
+   
     let viewModel = MainViewModel()
     let viewDebugModel = MainViewDebugModel()
     
@@ -25,8 +26,10 @@ class MainViewController: UIViewController {
         upToHongshulinTableView.showsVerticalScrollIndicator = false
        
 
-        DanhaiLRTRequestManager.shared.run()
+        DanhaiLRTRequestManager.shared.run()//MainTableViewCell
         upToHongshulinTableView.register(CustomSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: "CustomSectionHeaderView")
+//        upToHongshulinTableView.register(MainTableViewCell.self, forHeaderFooterViewReuseIdentifier: "MainTableViewCell")
+
         debugModeBtn.isHidden = !MainViewModel.isDebugMode
 
         
@@ -61,25 +64,25 @@ class MainViewController: UIViewController {
 
 extension MainViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DebugModeTableViewCell", for: indexPath) as! DebugModeTableViewCell
-        cell.contentView.backgroundColor = .red
-        
+      
         switch self.viewModel.directionNow {
         case .up:
             
             let info:StationInfos =  DanhaiLRTRequestManager.shared.upToHongshulinSubject.forceGetValue()
                 
             if viewDebugModel.openDebugSetting{
-//                let cell = viewDebugModel.giveMeDebugModeTableViewCell(tableView: tableView, indexPath: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "DebugModeTableViewCell", for: indexPath) as! DebugModeTableViewCell
                 cell.contentView.backgroundColor = indexPath.row%2 == 0 ? .cyan : .green
                 cell.modifyLabelsSetting(info: info,row: indexPath.row)
-                
+                return cell
             }else if StationInfos.isVacant(infos: info) {
              
 
                 
             }else{
-                
+
+                let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.identifier, for: indexPath) as! MainTableViewCell
+                return cell
             }
             break
         case .down:
@@ -97,7 +100,8 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
         }
         
         
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.identifier, for: indexPath) as! MainTableViewCell
+
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -133,7 +137,7 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
         if  viewDebugModel.openDebugSetting {
             return DebugModeTableViewCell.heigh
         }else{
-            return 50
+            return MainTableViewCell.height
         }
         //        return 50
         

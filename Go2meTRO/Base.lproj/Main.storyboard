@@ -32,7 +32,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iHt-k5-O64">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iHt-k5-O64">
                                 <rect key="frame" x="0.0" y="189" width="393" height="579"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -119,6 +119,66 @@
                                             <outlet property="t1" destination="RdS-4a-ZXh" id="8OH-zb-LfG"/>
                                             <outlet property="t3" destination="AHv-SG-hkl" id="2ZJ-cK-2qw"/>
                                             <outlet property="timeRouteId" destination="T3O-bc-cxP" id="BEU-ln-uSf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainTableViewCell" rowHeight="88" id="J31-kK-HUD" customClass="MainTableViewCell" customModule="Go2meTRO" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="155.33333206176758" width="393" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J31-kK-HUD" id="i2W-3x-BT3">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="88"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1t-Vi-fBy">
+                                                    <rect key="frame" x="35" y="-1" width="90" height="90"/>
+                                                    <color key="backgroundColor" red="0.92156862750000001" green="0.42352941179999998" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="90" id="C5G-yo-fkY"/>
+                                                        <constraint firstAttribute="width" constant="90" id="FBd-s8-bw4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MM0-pO-tjf">
+                                                    <rect key="frame" x="125" y="58" width="233" height="2"/>
+                                                    <color key="backgroundColor" red="0.92296415570000001" green="0.42195814850000002" blue="0.36398240920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="2" id="ANs-pq-tDc"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="站名載入.." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zk-Yk-hck">
+                                                    <rect key="frame" x="141.66666666666666" y="5" width="199.99999999999997" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="E4U-ex-5K3"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="到站時間載入.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8l-yv-Jpu">
+                                                    <rect key="frame" x="185" y="65" width="113.33333333333331" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6Zk-Yk-hck" firstAttribute="centerX" secondItem="MM0-pO-tjf" secondAttribute="centerX" id="2co-Sy-yhW"/>
+                                                <constraint firstItem="MM0-pO-tjf" firstAttribute="leading" secondItem="f1t-Vi-fBy" secondAttribute="trailing" id="3v4-2O-Yl2"/>
+                                                <constraint firstItem="6Zk-Yk-hck" firstAttribute="top" secondItem="i2W-3x-BT3" secondAttribute="top" constant="5" id="GAw-z9-8CA"/>
+                                                <constraint firstItem="MM0-pO-tjf" firstAttribute="centerY" secondItem="i2W-3x-BT3" secondAttribute="centerY" constant="15" id="NHe-Jq-nQQ"/>
+                                                <constraint firstItem="MM0-pO-tjf" firstAttribute="top" secondItem="6Zk-Yk-hck" secondAttribute="bottom" constant="10" id="bT4-88-Xte"/>
+                                                <constraint firstItem="f1t-Vi-fBy" firstAttribute="centerY" secondItem="i2W-3x-BT3" secondAttribute="centerY" id="hPD-HA-cfC"/>
+                                                <constraint firstItem="B8l-yv-Jpu" firstAttribute="centerX" secondItem="MM0-pO-tjf" secondAttribute="centerX" id="itc-wa-PXs"/>
+                                                <constraint firstItem="MM0-pO-tjf" firstAttribute="trailing" secondItem="i2W-3x-BT3" secondAttribute="trailingMargin" constant="-15" id="lA5-VU-Avu"/>
+                                                <constraint firstItem="B8l-yv-Jpu" firstAttribute="top" secondItem="MM0-pO-tjf" secondAttribute="bottom" constant="5" id="pzn-yT-f0X"/>
+                                                <constraint firstItem="f1t-Vi-fBy" firstAttribute="leading" secondItem="i2W-3x-BT3" secondAttribute="leadingMargin" constant="15" id="vo6-cD-Avn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="arrivalTimeLabel" destination="B8l-yv-Jpu" id="QQx-D3-cwg"/>
+                                            <outlet property="stationName" destination="6Zk-Yk-hck" id="1Wj-kd-Vnd"/>
+                                            <outlet property="timeLabel" destination="f1t-Vi-fBy" id="Cqx-3Y-p1n"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
