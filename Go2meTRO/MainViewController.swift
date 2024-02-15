@@ -76,15 +76,19 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
                 cell.modifyLabelsSetting(info: info,row: indexPath.row)
                 return cell
             }else if StationInfos.isVacant(infos: info) {
-             
-
-                
+                //還沒取的資料
             }else{
 
                 let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.identifier, for: indexPath) as! MainTableViewCell
+                cell.timeLabel.text = String(arc4random_uniform(11))+"min"
+                let staticInfos = DanhaiLRTRequestManager.shared.getStaticStationInfos()
+                let theStationInfo = staticInfos[indexPath.row]
+                cell.stationName.text = theStationInfo.localizationKey
+                cell.arrivalTimeLabel.text = "12:44"
+                
                 return cell
             }
-            break
+            
         case .down:
             switch indexPath.row {
             case 0:
@@ -100,9 +104,8 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
         }
         
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.identifier, for: indexPath) as! MainTableViewCell
-
-        return cell
+      
+        return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch self.viewModel.directionNow {
