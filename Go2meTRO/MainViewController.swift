@@ -149,6 +149,9 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
             switch section {
             case 0:
                 let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CustomSectionHeaderView") as! CustomSectionHeaderView
+                headerView.defaultSeting(witchLRTLine: .upToHongshulin)
+                headerView.headLineLable.text = "GGGGGG"
+                headerView.subTitleLable.text = "hhhhhh"
                 return headerView
             case 1:
                 break
