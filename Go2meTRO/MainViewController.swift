@@ -17,12 +17,14 @@ class MainViewController: UIViewController {
     @IBOutlet weak var upToHongshulinTableView: UITableView!
     let viewModel = MainViewModel()
     let viewDebugModel = MainViewDebugModel()
-   
+    
   
 
     override func viewDidLoad() {
         super.viewDidLoad()
         upToHongshulinTableView.showsVerticalScrollIndicator = false
+       
+
         DanhaiLRTRequestManager.shared.run()
         upToHongshulinTableView.register(CustomSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: "CustomSectionHeaderView")
         debugModeBtn.isHidden = !MainViewModel.isDebugMode
@@ -148,11 +150,12 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
         case .up:
             switch section {
             case 0:
-                let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CustomSectionHeaderView") as! CustomSectionHeaderView
-                headerView.defaultSeting(witchLRTLine: .upToHongshulin)
-                headerView.headLineLable.text = "GGGGGG"
-                headerView.subTitleLable.text = "hhhhhh"
-                return headerView
+//                let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CustomSectionHeaderView") as! CustomSectionHeaderView
+//                headerView.defaultSeting(witchLRTLine: .upToHongshulin)
+//                headerView.headLineLable.text = "GGGGGG"
+//                headerView.subTitleLable.text = "hhhhhh"
+//                return headerView
+                break
             case 1:
                 break
             case 2:
@@ -176,6 +179,10 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
         }
         
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CustomSectionHeaderView") as! CustomSectionHeaderView
+        headerView.defaultSeting(witchLRTLine: .upToHongshulin)
+        headerView.headLineLable.text = "紅樹林"
+        headerView.subTitleLable.text = "終點站"
+        
         return headerView
     }
 }
