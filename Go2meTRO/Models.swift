@@ -69,3 +69,23 @@ extension V2CurrentTimeModel {
     }
     
 }
+struct StationInfos {
+    let stations:[String]
+    let gpsDatas:[GpsData]
+    static var emptyEachStatinInfo:StationInfos{
+        let defaultModel = V2CurrentTimeModel.createDefaultModel()
+        let defGpsData:GpsData = (defaultModel.data?.gpsData[0][V2CurrentTimeModel.defaultModelKey])!
+        let only1Value = [defGpsData]
+        let only1key:[String] = [V2CurrentTimeModel.defaultModelKey]
+        return StationInfos(stations: only1key, gpsDatas: only1Value)
+    }
+    static func isVacant(infos:StationInfos) -> Bool {
+        return infos.stations[0] == V2CurrentTimeModel.defaultModelKey
+    }
+    
+}
+struct StaticStationInfos: Codable {
+    var id: String
+    var localizationKey: String
+    var terminal: String?
+}

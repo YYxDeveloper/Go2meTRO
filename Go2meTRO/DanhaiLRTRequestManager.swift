@@ -103,10 +103,10 @@ class DanhaiLRTRouteManager{
         
         
     }
-    func getStaticStationInfos() -> [StaticStationInfos]? {
+    func getStaticStationInfos() -> [StaticStationInfos] {
         guard let filePath = Bundle.main.path(forResource: "StationStaticInfo", ofType: "json") else {
             print("Error: JSON file not found.")
-            return nil
+            return [StaticStationInfos(id: "V01", localizationKey: "Hongshulin")]
         }
         
         do {
@@ -115,7 +115,7 @@ class DanhaiLRTRouteManager{
             return stations
         } catch {
             assertionFailure(error.localizedDescription)
-            return nil
+            return [StaticStationInfos(id: "V01", localizationKey: "Hongshulin")]
         }
     }
 
@@ -155,7 +155,7 @@ class DanhaiLRTRequestManager{
     let downToHongshulinSubject = BehaviorSubject<StationInfos>.init(value: (StationInfos.emptyEachStatinInfo))
     private let disposeBag = DisposeBag()
     
-    func getStaticStationInfos() -> [StaticStationInfos]? {
+    func getStaticStationInfos() -> [StaticStationInfos] {
         return self.routeManager.getStaticStationInfos()
     }
     func sortGpsData<T: RawRepresentable & CaseIterable>(stationKey enumType: T.Type, inputGpsData: [String: GpsData]) -> StationInfos where T.RawValue == String {
@@ -195,23 +195,4 @@ class DanhaiLRTRequestManager{
 
     
 }
-struct StationInfos {
-    let stations:[String]
-    let gpsDatas:[GpsData]
-    static var emptyEachStatinInfo:StationInfos{
-        let defaultModel = V2CurrentTimeModel.createDefaultModel()
-        let defGpsData:GpsData = (defaultModel.data?.gpsData[0][V2CurrentTimeModel.defaultModelKey])!
-        let only1Value = [defGpsData]
-        let only1key:[String] = [V2CurrentTimeModel.defaultModelKey]
-        return StationInfos(stations: only1key, gpsDatas: only1Value)
-    }
-    static func isVacant(infos:StationInfos) -> Bool {
-        return infos.stations[0] == V2CurrentTimeModel.defaultModelKey
-    }
-    
-}
-struct StaticStationInfos: Codable {
-    var id: String
-    var localizationKey: String
-    var terminal: String?
-}
+

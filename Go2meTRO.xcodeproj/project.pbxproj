@@ -59,9 +59,9 @@
 		D2DDE0192B56805C00ECF8C8 /* V2Model.json in Resources */ = {isa = PBXBuildFile; fileRef = D2DDE0182B56805C00ECF8C8 /* V2Model.json */; };
 		D2DDE01A2B56805C00ECF8C8 /* V2Model.json in Resources */ = {isa = PBXBuildFile; fileRef = D2DDE0182B56805C00ECF8C8 /* V2Model.json */; };
 		D2DDE01B2B56805C00ECF8C8 /* V2Model.json in Resources */ = {isa = PBXBuildFile; fileRef = D2DDE0182B56805C00ECF8C8 /* V2Model.json */; };
-		D2DDE01D2B5680B800ECF8C8 /* V2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DDE01C2B5680B800ECF8C8 /* V2Model.swift */; };
-		D2DDE01E2B5680B800ECF8C8 /* V2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DDE01C2B5680B800ECF8C8 /* V2Model.swift */; };
-		D2DDE01F2B5680B800ECF8C8 /* V2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DDE01C2B5680B800ECF8C8 /* V2Model.swift */; };
+		D2DDE01D2B5680B800ECF8C8 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DDE01C2B5680B800ECF8C8 /* Models.swift */; };
+		D2DDE01E2B5680B800ECF8C8 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DDE01C2B5680B800ECF8C8 /* Models.swift */; };
+		D2DDE01F2B5680B800ECF8C8 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DDE01C2B5680B800ECF8C8 /* Models.swift */; };
 		F47C08FC67EED73E446F3777 /* Pods_Go2meTRO_Go2meTROUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5D5F47B280E411DEBD12B4 /* Pods_Go2meTRO_Go2meTROUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -125,7 +125,7 @@
 		D2DC6BAF2B71387B00689296 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D2DC6BB12B71388100689296 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D2DDE0182B56805C00ECF8C8 /* V2Model.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = V2Model.json; sourceTree = "<group>"; };
-		D2DDE01C2B5680B800ECF8C8 /* V2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2Model.swift; sourceTree = "<group>"; };
+		D2DDE01C2B5680B800ECF8C8 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,7 +228,7 @@
 				D2DDE0182B56805C00ECF8C8 /* V2Model.json */,
 				D23CA82D2B7A36EC007C9C4A /* StationStaticInfo.json */,
 				D2C2B0A62B591A7500AAE90A /* V2DefaultModel.json */,
-				D2DDE01C2B5680B800ECF8C8 /* V2Model.swift */,
+				D2DDE01C2B5680B800ECF8C8 /* Models.swift */,
 				D2B2B8B32B565FC100BBE63F /* Main.storyboard */,
 				D2DC6BB02B71387B00689296 /* Localizable.strings */,
 				D2B2B8B92B565FC200BBE63F /* Assets.xcassets */,
@@ -533,7 +533,7 @@
 				D2976C802B57C351009F6149 /* DanhaiLRTRequestManager.swift in Sources */,
 				D2B2B8B22B565FC100BBE63F /* ViewController.swift in Sources */,
 				D2D05CCB2B74B17800FC1774 /* Rx+extension.swift in Sources */,
-				D2DDE01D2B5680B800ECF8C8 /* V2Model.swift in Sources */,
+				D2DDE01D2B5680B800ECF8C8 /* Models.swift in Sources */,
 				D2B2B8AE2B565FC100BBE63F /* AppDelegate.swift in Sources */,
 				D2300FC72B73483800EEFB21 /* String+extension.swift in Sources */,
 				D2B2B8B02B565FC100BBE63F /* SceneDelegate.swift in Sources */,
@@ -552,7 +552,7 @@
 				D23CA82B2B79F117007C9C4A /* MainViewDebugModel.swift in Sources */,
 				D22F3BCE2B7D19180044B7E4 /* CustomSectionHeaderView.swift in Sources */,
 				D2976C812B57C351009F6149 /* DanhaiLRTRequestManager.swift in Sources */,
-				D2DDE01E2B5680B800ECF8C8 /* V2Model.swift in Sources */,
+				D2DDE01E2B5680B800ECF8C8 /* Models.swift in Sources */,
 				D2C92EAA2B6E892800DB2D8D /* DebugModeTableViewCell.swift in Sources */,
 				D2300FC82B734EA300EEFB21 /* String+extension.swift in Sources */,
 				D22F3BCA2B7D0B690044B7E4 /* Color+extension.swift in Sources */,
@@ -573,7 +573,7 @@
 				D2D05CCD2B74B2E200FC1774 /* Rx+extension.swift in Sources */,
 				D2976C822B57C351009F6149 /* DanhaiLRTRequestManager.swift in Sources */,
 				D22F3BCB2B7D0B690044B7E4 /* Color+extension.swift in Sources */,
-				D2DDE01F2B5680B800ECF8C8 /* V2Model.swift in Sources */,
+				D2DDE01F2B5680B800ECF8C8 /* Models.swift in Sources */,
 				D2B2B8D32B565FC200BBE63F /* Go2meTROUITests.swift in Sources */,
 				D22F3BCF2B7D19180044B7E4 /* CustomSectionHeaderView.swift in Sources */,
 				D28C7CD62B58F5B100FB9EB7 /* MainViewController.swift in Sources */,
